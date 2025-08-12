@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Home Loans - Your Trusted Residential Mortgage Brokers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#D4AF37',
+                        'brand-brown': '#3E2723',
+                        'brand-dark': '#121212',
+                        'brand-light': '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for subtle effects */
+        .hero-bg {
+            background-color: #121212;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-bg {
+            background-color: #3E2723;
+            background-image: linear-gradient(rgba(62, 39, 35, 0.9), rgba(62, 39, 35, 0.9)), url('https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-gold {
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-brand-brown">Apex Home Loans</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#home-buyers" class="text-gray-600 hover:text-brand-gold">First-Time Buyers</a>
+                <a href="#loan-options" class="text-gray-600 hover:text-brand-gold">Loan Options</a>
+                <a href="#why-us" class="text-gray-600 hover:text-brand-gold">Why Us</a>
+                <a href="#calculator" class="text-gray-600 hover:text-brand-gold">Calculator</a>
+                <a href="#contact" class="bg-brand-gold text-white px-4 py-2 rounded-md font-semibold hover:bg-yellow-600 transition">Get Started</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#home-buyers" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">First-Time Buyers</a>
+            <a href="#loan-options" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Loan Options</a>
+            <a href="#why-us" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Why Us</a>
+            <a href="#calculator" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Calculator</a>
+            <a href="#contact" class="block px-6 py-3 bg-brand-gold text-white text-center font-semibold">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-24 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Experience the Mortgage Difference</h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-2">at <span class="text-brand-gold font-semibold">Apex Home Loans</span></p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">Your trusted residential mortgage brokers, dedicated to finding the perfect loan for your home.</p>
+            <a href="#contact" class="bg-brand-gold text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-600 btn-gold">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 rounded-lg shadow-lg feature-card bg-brand-light">
+                    <div class="text-brand-gold mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Fiduciary Duty</h3>
+                    <p class="text-gray-600">We are legally and ethically bound to act in your best interest, always putting your financial well-being first.</p>
+                </div>
+                <div class="p-8 rounded-lg shadow-lg feature-card bg-brand-light">
+                    <div class="text-brand-gold mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Free Market System</h3>
+                    <p class="text-gray-600">We shop from a wide network of lenders to ensure you get the most competitive rates and terms available.</p>
+                </div>
+                <div class="p-8 rounded-lg shadow-lg feature-card bg-brand-light">
+                    <div class="text-brand-gold mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Avoid Complication</h3>
+                    <p class="text-gray-600">Our streamlined process and expert guidance make securing a mortgage simple and stress-free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- First Time Home Buyers -->
+    <section id="home-buyers" class="py-16 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?q=80&w=1974&auto=format&fit=crop" alt="A beautiful modern home" class="rounded-lg shadow-xl w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/D4AF37/FFFFFF?text=Happy+New+Homeowners';">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-brown mb-4">Guidance for First-Time Home Buyers</h2>
+                    <p class="text-gray-600 mb-4">Buying your first home is a huge milestone. We understand it can be overwhelming. Our team specializes in guiding you through every step, from pre-approval to closing day. We'll help you understand your options, secure down payment assistance if available, and make your dream of homeownership a reality.</p>
+                    <a href="#contact" class="text-brand-gold font-semibold hover:underline">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Options -->
+    <section id="loan-options" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-brown mb-12">Explore Your Loan Options</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Loan Option Card -->
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Fixed-Rate Mortgage</h3>
+                    <p class="text-gray-600">Enjoy the stability of a consistent interest rate and monthly payment for the life of your loan.</p>
+                </div>
+                <!-- Loan Option Card -->
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Adjustable-Rate (ARM)</h3>
+                    <p class="text-gray-600">Benefit from a lower initial interest rate, ideal for short-term homeownership plans.</p>
+                </div>
+                <!-- Loan Option Card -->
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">FHA Loans</h3>
+                    <p class="text-gray-600">Government-insured loans with flexible credit requirements and low down payment options.</p>
+                </div>
+                <!-- Loan Option Card -->
+                <div class="border border-gray-200 rounded-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">VA Loans</h3>
+                    <p class="text-gray-600">Exclusive financing for veterans, service members, and eligible spouses, often with no down payment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-16 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Professional mortgage team collaborating" class="rounded-lg shadow-xl w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/3E2723/FFFFFF?text=Our+Expert+Team';">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-brown mb-4">Why Choose Apex Home Loans?</h2>
+                    <p class="text-gray-600 mb-4">We're not just brokers; we're partners in your homeownership journey. With years of experience in the residential mortgage market, we've built our reputation on transparency, integrity, and unparalleled customer service.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">&#10003;</span> Personalized service tailored to your unique needs.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">&#10003;</span> Access to a vast network of lenders for the best rates.</li>
+                        <li class="flex items-start"><span class="text-brand-gold mr-2">&#10003;</span> Proactive communication and support from start to finish.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Take the Next Step?</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">Whether you're buying, refinancing, or just have questions, our team is ready to help. Get a free, no-obligation consultation today.</p>
+            <a href="#" class="bg-brand-gold text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-600 btn-gold">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Mortgage Calculator -->
+    <section id="calculator" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-brown mb-4">Mortgage Calculator</h2>
+                    <p class="text-gray-600 mb-6">Estimate your monthly mortgage payment with our simple calculator. Please note this is an estimate and does not include taxes, insurance, or PMI.</p>
+                    <form id="mortgage-form" class="space-y-4">
+                        <div>
+                            <label for="loan-amount" class="block text-sm font-medium text-gray-700">Loan Amount ($)</label>
+                            <input type="number" id="loan-amount" value="300000" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold">
+                        </div>
+                        <div>
+                            <label for="interest-rate" class="block text-sm font-medium text-gray-700">Interest Rate (%)</label>
+                            <input type="number" id="interest-rate" step="0.01" value="6.5" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold">
+                        </div>
+                        <div>
+                            <label for="loan-term" class="block text-sm font-medium text-gray-700">Loan Term (Years)</label>
+                            <select id="loan-term" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-gold focus:border-brand-gold">
+                                <option value="30">30</option>
+                                <option value="20">20</option>
+                                <option value="15">15</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 w-full flex justify-center items-center">
+                    <div class="bg-brand-brown text-white p-8 rounded-lg shadow-2xl text-center w-full max-w-sm">
+                        <h3 class="text-lg text-gray-300 mb-2">Estimated Monthly Payment</h3>
+                        <p id="monthly-payment" class="text-4xl md:text-5xl font-bold text-brand-gold">$0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-brown mb-12">What Our Clients Are Saying</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"Apex Home Loans made our first home purchase a breeze. Their team was incredibly supportive and found us a rate we didn't think was possible. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/cccccc/FFFFFF?text=J.D." alt="Client photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-brand-brown">John & Jane Doe</p>
+                            <p class="text-sm text-gray-500">First-Time Home Buyers</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"The professionalism and expertise at Apex Home Loans are second to none. They handled our refinance with speed and efficiency. A truly five-star experience."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/cccccc/FFFFFF?text=M.S." alt="Client photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-brand-brown">Michael Smith</p>
+                            <p class="text-sm text-gray-500">Refinance Client</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"As a real estate investor, I need a mortgage partner I can trust. Apex Home Loans consistently delivers competitive options and closes on time, every time."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/48x48/cccccc/FFFFFF?text=S.L." alt="Client photo" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold text-brand-brown">Susan Lee</p>
+                            <p class="text-sm text-gray-500">Real Estate Investor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-brown mb-12">Latest Updates</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post Card -->
+                <div class="bg-brand-light rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop" alt="Stock market graph on a screen" class="w-full h-48" onerror="this.onerror=null;this.src='https://placehold.co/400x250/D4AF37/FFFFFF?text=Market+Trends';">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">August 10, 2025</p>
+                        <h3 class="text-lg font-semibold text-brand-brown mb-2">Understanding Current Mortgage Rate Trends</h3>
+                        <a href="#" class="text-brand-gold font-semibold hover:underline">Read More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Blog Post Card -->
+                <div class="bg-brand-light rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973&auto=format&fit=crop" alt="Couple meeting with a financial advisor" class="w-full h-48" onerror="this.onerror=null;this.src='https://placehold.co/400x250/3E2723/FFFFFF?text=Tips+For+Buyers';">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">July 28, 2025</p>
+                        <h3 class="text-lg font-semibold text-brand-brown mb-2">5 Essential Tips for First-Time Home Buyers</h3>
+                        <a href="#" class="text-brand-gold font-semibold hover:underline">Read More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Blog Post Card -->
+                <div class="bg-brand-light rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop" alt="Person signing documents with a calculator" class="w-full h-48" onerror="this.onerror=null;this.src='https://placehold.co/400x250/121212/FFFFFF?text=Refinancing';">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">July 15, 2025</p>
+                        <h3 class="text-lg font-semibold text-brand-brown mb-2">Is Now a Good Time to Refinance Your Home?</h3>
+                        <a href="#" class="text-brand-gold font-semibold hover:underline">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Apex Home Loans</h3>
+                    <p class="text-gray-400">Your partner in homeownership.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home-buyers" class="text-gray-400 hover:text-brand-gold">First-Time Buyers</a></li>
+                        <li><a href="#loan-options" class="text-gray-400 hover:text-brand-gold">Loan Options</a></li>
+                        <li><a href="#why-us" class="text-gray-400 hover:text-brand-gold">Why Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-brand-gold">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">123 Mortgage Lane, Suite 100<br>Finance City, ST 12345</p>
+                    <p class="text-gray-400 mt-2">Email: contact@apexhlaons.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014V8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.47 9.763H6.48V8.59H3.535v7.748zM17.668 1H6.328C3.965 1 2 2.984 2 5.356v13.288C2 21.016 3.965 23 6.328 23h11.34c2.363 0 4.322-1.984 4.322-4.356V5.356C22 2.984 20.032 1 17.668 1z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Apex Home Loans. All Rights Reserved. | NMLS ID #234567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mortgage Calculator
+        const loanAmountInput = document.getElementById('loan-amount');
+        const interestRateInput = document.getElementById('interest-rate');
+        const loanTermInput = document.getElementById('loan-term');
+        const monthlyPaymentDisplay = document.getElementById('monthly-payment');
+        const mortgageForm = document.getElementById('mortgage-form');
+
+        function calculateMortgage() {
+            const P = parseFloat(loanAmountInput.value); // Principal loan amount
+            const r = parseFloat(interestRateInput.value) / 100 / 12; // Monthly interest rate
+            const n = parseFloat(loanTermInput.value) * 12; // Number of payments
+
+            if (P > 0 && r > 0 && n > 0) {
+                const M = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                monthlyPaymentDisplay.textContent = M.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+            } else {
+                monthlyPaymentDisplay.textContent = '$0.00';
+            }
+        }
+
+        // Calculate on initial load
+        calculateMortgage();
+
+        // Recalculate on input change
+        mortgageForm.addEventListener('input', calculateMortgage);
+
+    </script>
+</body>
+</html>
