@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HarborPath Mortgage — Your Trusted Mortgage Broker</title>
+  <meta name="description" content="HarborPath Mortgage helps you compare lenders, lock great rates, and close fast. Get pre-qualified in minutes with a dedicated broker by your side." />
+  <meta name="theme-color" content="#f7f7fb" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Cpath fill='%230D47A1' d='M64 10 8 50v12h12v46h32V84h24v24h32V62h12V50z'/%3E%3Ccircle cx='64' cy='82' r='6' fill='%23fff'/%3E%3C/svg%3E" />
+  <meta property="og:title" content="HarborPath Mortgage — Your Trusted Mortgage Broker" />
+  <meta property="og:description" content="Compare lenders, lock great rates, close fast. Get pre-qualified in minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/f7f7fb/0d47a1&text=HarborPath+Mortgage" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Design Tokens -->
+  <style>
+    :root{
+      --bg: #ffffff;
+      --bg-soft: #f7f7fb;
+      --text: #0b1220;
+      --muted: #5a6473;
+      --primary: #0D47A1;
+      --primary-600:#0b3c88;
+      --accent:#00BFA6;
+      --ring: 0 0 0 3px rgba(13,71,161,.2);
+      --radius: 14px;
+      --shadow-sm: 0 1px 2px rgba(10,20,50,.06);
+      --shadow-md: 0 8px 24px rgba(13, 71, 161, .12);
+      --shadow-lg: 0 18px 60px rgba(10,20,50,.12);
+      --container: 1120px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0e1320;
+        --bg-soft: #0b101b;
+        --text: #ecf1ff;
+        --muted: #a8b2c3;
+        --primary:#5b8cff;
+        --primary-600:#517fe6;
+        --accent:#3ee0cc;
+        --shadow-sm: 0 1px 1px rgba(0,0,0,.3);
+        --shadow-md: 0 8px 24px rgba(0,0,0,.35);
+        --shadow-lg: 0 18px 60px rgba(0,0,0,.5);
+      }
+      body{background:var(--bg); color:var(--text);}
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%; display:block}
+    a{color:var(--primary); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:20px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+      padding:.9rem 1.1rem; border-radius:12px; background:var(--primary); color:#fff;
+      border:1px solid transparent; box-shadow:var(--shadow-md); font-weight:650;
+      letter-spacing:.2px; transition:.2s transform ease, .2s box-shadow ease, .2s background ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-lg); text-decoration:none}
+    .btn:focus-visible{outline:none; box-shadow: var(--shadow-md), var(--ring)}
+    .btn.alt{background:#fff;color:var(--primary); border-color:#dbe3ff}
+    .badge{
+      display:inline-flex; gap:.4rem; align-items:center; font-size:.85rem; padding:.35rem .6rem;
+      border-radius:999px; background: #eaf2ff; color: var(--primary);
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter:saturate(140%) blur(8px); border-bottom:1px solid color-mix(in srgb, var(--muted) 12%, transparent);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.6rem 0}
+    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px}
+    .brand svg{width:34px; height:34px}
+    .nav-links{display:flex; gap:1.2rem; align-items:center}
+    .nav-links a{color:var(--muted); font-weight:600}
+    .nav-cta{display:flex; gap:.6rem}
+
+    /* Hero */
+    .hero{padding:clamp(32px, 6vw, 80px) 0 20px; background:linear-gradient(180deg, var(--bg-soft), var(--bg))}
+    .hero-inner{display:grid; grid-template-columns: 1.1fr .9fr; gap:min(6vw,56px); align-items:center}
+    .hero h1{
+      font-size:clamp(28px, 3.4vw, 48px); line-height:1.18; margin:0 0 .6rem;
+      letter-spacing:.2px;
+    }
+    .hero p{font-size:clamp(16px, 1.2vw, 20px); color:var(--muted); margin:0 0 1rem}
+    .hero-card{
+      background:#fff; border:1px solid #e9eef9; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow-md)
+    }
+    .hero-media{
+      position:relative; aspect-ratio: 4/3; border-radius:18px; overflow:hidden; box-shadow:var(--shadow-lg);
+      background: #dfe8ff;
+    }
+    .trust-row{display:flex; gap:18px; align-items:center; flex-wrap:wrap; margin-top:14px}
+    .trust-row img{height:28px; filter:grayscale(1); opacity:.8}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
+    .kpi{background:var(--bg-soft); border:1px solid #e9eef9; padding:12px 14px; border-radius:12px; text-align:center}
+    .kpi b{font-size:1.2rem; display:block}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{margin:0 0 10px; font-size: clamp(22px, 2.2vw, 32px)}
+    .section-sub{color:var(--muted); margin:0 0 24px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+    .card{
+      background:#fff; border:1px solid #e9eef9; border-radius:16px; padding:18px; box-shadow:var(--shadow-sm)
+    }
+    .card h3{margin:.2rem 0 .4rem}
+    .icon{
+      width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:#eef4ff; margin-bottom:8px;
+    }
+    .icon svg{width:22px; height:22px}
+    .rates{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    .rate{padding:16px; border-radius:14px; background: var(--bg-soft); border:1px solid #e9eef9}
+    .rate .label{color:var(--muted); font-size:.9rem}
+    .rate .value{font-size:1.6rem; font-weight:750}
+
+    /* Lead form & calc */
+    .split{display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:start}
+    form{display:grid; gap:12px}
+    .field{display:grid; gap:6px}
+    .field label{font-weight:650}
+    .field input, .field select, .field textarea{
+      padding:12px 12px; border-radius:12px; border:1px solid #dfe5f3; background:#fff; color:var(--text);
+      font-size:16px;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus{outline:none; box-shadow:var(--ring); border-color:#c8d6ff}
+    .hint{font-size:.85rem; color:var(--muted)}
+    .notice{font-size:.85rem; color:var(--muted)}
+    .success{display:none; background:#ecfff7; border:1px solid #bff0df; color:#0f5132; padding:10px 12px; border-radius:12px}
+    .error{display:none; background:#fff1f1; border:1px solid #ffd0d0; color:#7a1111; padding:10px 12px; border-radius:12px}
+
+    /* Testimonials */
+    .testimonials{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .quote{padding:18px; background:#fff; border:1px solid #e9eef9; border-radius:16px}
+    .stars{letter-spacing:2px}
+
+    /* FAQ */
+    details{
+      border:1px solid #e9eef9; background:#fff; border-radius:14px; padding:14px 16px;
+    }
+    details+details{margin-top:12px}
+    summary{cursor:pointer; font-weight:700}
+    summary::-webkit-details-marker{display:none}
+
+    /* Footer */
+    footer{
+      background:var(--bg-soft); border-top:1px solid #e9eef9; padding:28px 0; color:var(--muted); font-size:.95rem
+    }
+    .footgrid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:22px}
+    .fineprint{font-size:.82rem; color:var(--muted); margin-top:12px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner, .split{grid-template-columns:1fr}
+      .rates{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:1fr 1fr}
+      .testimonials{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+    }
+    @media (max-width: 640px){
+      .rates{grid-template-columns:1fr}
+      .grid-3, .testimonials{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+      .footgrid{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FinancialService",
+    "name":"HarborPath Mortgage",
+    "url":"https://example.com",
+    "logo":"https://dummyimage.com/600x200/f7f7fb/0d47a1&text=HarborPath",
+    "telephone":"+1-800-555-0199",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"120 Harbor Way",
+      "addressLocality":"San Diego",
+      "addressRegion":"CA",
+      "postalCode":"92101",
+      "addressCountry":"US"
+    },
+    "sameAs":["https://www.linkedin.com/","https://www.facebook.com/"],
+    "areaServed":"US",
+    "description":"Independent mortgage broker offering purchase and refinance loans."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "How fast can I get pre-qualified?",
+      "acceptedAnswer": {"@type":"Answer","text":"Most clients receive a pre-qualification letter within 24 hours after submitting documents."}
+    },{
+      "@type": "Question",
+      "name": "Do you charge broker fees?",
+      "acceptedAnswer": {"@type":"Answer","text":"We are typically compensated by lenders. Any applicable fees are disclosed up front."}
+    }]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip link for a11y -->
+  <a href="#main" class="badge" style="position:absolute; left:-9999px; top:8px" onfocus="this.style.left='8px'">Skip to content</a>
+
+  <header role="banner">
+    <div class="container nav" aria-label="Primary">
+      <a href="#" class="brand" aria-label="HarborPath Mortgage Home">
+        <svg viewBox="0 0 128 128" aria-hidden="true"><path fill="currentColor" d="M64 10 8 50v12h12v46h32V84h24v24h32V62h12V50z"/></svg>
+        HarborPath <span class="badge" aria-hidden="true">Mortgage</span>
+      </a>
+      <nav class="nav-links" aria-label="Site">
+        <a href="#how">How it works</a>
+        <a href="#rates">Rates</a>
+        <a href="#calc">Calculator</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#lead" class="btn alt" aria-label="Call us at 1-800-555-0199">Call: 1-800-555-0199</a>
+        <a href="#lead" class="btn">Get pre-qualified</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="badge" aria-label="Rating badge">★ ★ ★ ★ ★ 4.9/5 from 1,200+ clients</span>
+          <h1>Mortgage made simple. <br />Real people, real savings.</h1>
+          <p>As your independent broker, we compare dozens of lenders so you don’t have to. Lock competitive rates, enjoy white-glove service, and close fast.</p>
+          <div class="kpis" role="list" aria-label="Key stats">
+            <div class="kpi" role="listitem"><b>$4.2B+</b><span class="hint">funded since 2015</span></div>
+            <div class="kpi" role="listitem"><b>21-day</b><span class="hint">average clear-to-close</span></div>
+            <div class="kpi" role="listitem"><b>98%</b><span class="hint">client satisfaction</span></div>
+          </div>
+          <div class="trust-row" aria-label="As seen on">
+            <span class="hint">As seen on</span>
+            <img src="https://dummyimage.com/100x28/cccccc/ffffff&text=Bloomberg" alt="Bloomberg logo" loading="lazy">
+            <img src="https://dummyimage.com/90x28/cccccc/ffffff&text=Forbes" alt="Forbes logo" loading="lazy">
+            <img src="https://dummyimage.com/80x28/cccccc/ffffff&text=WSJ" alt="Wall Street Journal logo" loading="lazy">
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          <!-- Replace with an actual photo of happy homeowners or agent -->
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop" alt="" loading="eager" style="width:100%; height:100%; object-fit:cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how">
+      <div class="container">
+        <h2 class="section-title">How HarborPath works</h2>
+        <p class="section-sub">Three steps. Transparent updates. A dedicated broker by your side.</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h12v2H3z"/></svg>
+            </div>
+            <h3>1) Quick pre-qualification</h3>
+            <p>Tell us about your goals and upload docs. We’ll verify income and credit to issue a pre-qual fast.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="m21 7-9 9-5-5 1.5-1.5L12 13l7.5-7.5z"/></svg>
+            </div>
+            <h3>2) Shop lenders</h3>
+            <p>We compare programs across top lenders to find the right fit—rate, term, down payment, and fees.</p>
+          </div>
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v16H4zm3 7h10v2H7z"/></svg>
+            </div>
+            <h3>3) Close with confidence</h3>
+            <p>E-sign, mobile notarization, and proactive milestone updates to get you home on time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Today’s sample rates (static placeholders) -->
+    <section id="rates">
+      <div class="container">
+        <h2 class="section-title">Sample rates (for demo purposes)</h2>
+        <p class="section-sub">Rates change frequently. Get your personalized quote—no impact on credit score.</p>
+        <div class="rates" role="list">
+          <div class="rate" role="listitem"><div class="label">30-year fixed</div><div class="value">6.49%</div><div class="hint">APR 6.61%</div></div>
+          <div class="rate" role="listitem"><div class="label">15-year fixed</div><div class="value">5.98%</div><div class="hint">APR 6.12%</div></div>
+          <div class="rate" role="listitem"><div class="label">7/1 ARM</div><div class="value">6.12%</div><div class="hint">APR 6.48%</div></div>
+          <div class="rate" role="listitem"><div class="label">FHA 30-year</div><div class="value">6.15%</div><div class="hint">APR 6.39%</div></div>
+        </div>
+        <p class="notice">Illustrative only. Not a commitment to lend. Credit and collateral are subject to approval.</p>
+      </div>
+    </section>
+
+    <!-- Lead form + Calculator -->
+    <section id="lead">
+      <div class="container split">
+        <article class="hero-card" aria-labelledby="leadTitle">
+          <h2 id="leadTitle" class="section-title">Get your free, no-obligation quote</h2>
+          <p class="section-sub">Complete the form and a licensed broker will reach out within one business day.</p>
+          <form id="leadForm" novalidate>
+            <div class="success" role="status" aria-live="polite" id="leadSuccess">Thanks! We’ll be in touch shortly.</div>
+            <div class="error" role="alert" id="leadError">Please check the highlighted fields and try again.</div>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" autocomplete="name" required placeholder="Jane Doe" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@email.com" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 000-0000" required />
+            </div>
+            <div class="field">
+              <label for="purpose">Loan purpose</label>
+              <select id="purpose" name="purpose" required>
+                <option value="">Select...</option>
+                <option>Purchase</option>
+                <option>Refinance</option>
+                <option>Investment</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="amount">Estimated loan amount</label>
+              <input id="amount" name="amount" type="number" min="50000" step="1000" placeholder="350000" required />
+              <span class="hint">We’ll use this to tailor your options.</span>
+            </div>
+            <div class="field">
+              <label for="message">Anything else?</label>
+              <textarea id="message" name="message" rows="3" placeholder="Desired monthly payment, target closing date, etc."></textarea>
+            </div>
+            <button class="btn" type="submit" aria-label="Submit and request a quote">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m2 21 21-9L2 3v7l15 2-15 2z"/></svg>
+              Request my quote
+            </button>
+            <p class="fineprint">By submitting, you agree to be contacted by HarborPath Mortgage. This is not a commitment to lend.</p>
+          </form>
+        </article>
+
+        <aside id="calc" class="card" aria-labelledby="calcTitle">
+          <h2 id="calcTitle" class="section-title" style="margin-top:0">Mortgage calculator</h2>
+          <div class="field">
+            <label for="homePrice">Home price</label>
+            <input id="homePrice" type="number" min="50000" step="1000" value="450000" />
+          </div>
+          <div class="field">
+            <label for="downPayment">Down payment</label>
+            <input id="downPayment" type="number" min="0" step="1000" value="90000" />
+          </div>
+          <div class="field">
+            <label for="interest">Interest rate (%)</label>
+            <input id="interest" type="number" min="0" step="0.01" value="6.25" />
+          </div>
+          <div class="field">
+            <label for="term">Term (years)</label>
+            <input id="term" type="number" min="5" step="5" value="30" />
+          </div>
+          <div class="field">
+            <label for="taxes">Property tax (annual)</label>
+            <input id="taxes" type="number" min="0" step="100" value="4800" />
+          </div>
+          <div class="field">
+            <label for="insurance">Homeowners insurance (annual)</label>
+            <input id="insurance" type="number" min="0" step="50" value="1200" />
+          </div>
+          <div class="field">
+            <label for="hoa">HOA (monthly)</label>
+            <input id="hoa" type="number" min="0" step="10" value="0" />
+          </div>
+          <button class="btn" id="calcBtn" type="button" aria-label="Calculate monthly payment">Calculate payment</button>
+          <div class="card" style="margin-top:14px; background:var(--bg-soft)">
+            <h3 style="margin:.2rem 0">Estimated monthly payment</h3>
+            <p class="hint" id="calcBreakdown">—</p>
+            <p style="font-size:2rem; font-weight:800" id="calcResult">$—</p>
+          </div>
+          <p class="fineprint">Estimates are for illustrative purposes and not a quote. Does not include mortgage insurance, if applicable.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Social proof -->
+    <section aria-labelledby="reviewsTitle">
+      <div class="container">
+        <h2 id="reviewsTitle" class="section-title">Clients love HarborPath</h2>
+        <div class="testimonials" role="list">
+          <figure class="quote" role="listitem">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote>“Easiest mortgage we’ve ever done. Clear updates and we closed a week early.”</blockquote>
+            <figcaption class="hint">— Alex P., first-time buyer</figcaption>
+          </figure>
+          <figure class="quote" role="listitem">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote>“They beat my bank’s rate by 0.4% and walked me through every step.”</blockquote>
+            <figcaption class="hint">— Priya R., refinance</figcaption>
+          </figure>
+          <figure class="quote" role="listitem">
+            <div class="stars" aria-label="5 out of 5">★★★★★</div>
+            <blockquote>“Great communication, super transparent fees, and fast.”</blockquote>
+            <figcaption class="hint">— Miguel S., move-up buyer</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <details>
+          <summary>Will checking my rate hurt my credit?</summary>
+          <p>No. Getting a personalized quote uses a soft credit pull. If you proceed, a hard pull may be required.</p>
+        </details>
+        <details>
+          <summary>Do you work with first-time buyers?</summary>
+          <p>Absolutely. We’ll explore low down payment programs, down-payment assistance, and lock protection.</p>
+        </details>
+        <details>
+          <summary>What documents will I need?</summary>
+          <p>Typically 2 years of W-2s or tax returns, recent pay stubs, bank statements, and ID. Specifics vary by program.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footgrid">
+      <div>
+        <div class="brand" aria-label="HarborPath Mortgage">
+          <svg viewBox="0 0 128 128" aria-hidden="true"><path fill="currentColor" d="M64 10 8 50v12h12v46h32V84h24v24h32V62h12V50z"/></svg>
+          HarborPath Mortgage
+        </div>
+        <p class="fineprint">NMLS #923456 • Equal Housing Lender</p>
+        <p class="fineprint">© <span id="year"></span> HarborPath, LLC. All rights reserved.</p>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <p class="fineprint">120 Harbor Way, San Diego, CA 92101<br />+1 (800) 555-0199<br /><a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+      <div>
+        <strong>Legal</strong>
+        <p class="fineprint"><a href="#">Licensing</a> · <a href="#">Privacy</a> · <a href="#">Disclosures</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactions -->
+  <script>
+    // Util: format currency
+    const fmtMoney = (n) => n.toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
+
+    // Lead form validation (client-only demo)
+    const leadForm = document.getElementById('leadForm');
+    const leadSuccess = document.getElementById('leadSuccess');
+    const leadError = document.getElementById('leadError');
+
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      leadSuccess.style.display = 'none';
+      leadError.style.display = 'none';
+
+      // Simple validation
+      let valid = true;
+      for (const el of ['name','email','phone','purpose','amount'].map(id => document.getElementById(id))) {
+        el.setAttribute('aria-invalid','false');
+        el.style.borderColor = '#dfe5f3';
+        if (!el.value || (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value))) {
+          el.setAttribute('aria-invalid','true');
+          el.style.borderColor = '#ffb4b4';
+          valid = false;
+        }
+      }
+      if (!valid) { leadError.style.display = 'block'; return; }
+
+      // Fake success (replace with real POST)
+      leadSuccess.style.display = 'block';
+      leadForm.reset();
+    });
+
+    // Mortgage calculator: principal & interest + escrows (taxes/insurance) + HOA
+    function calcMortgage() {
+      const price = +document.getElementById('homePrice').value || 0;
+      const down  = +document.getElementById('downPayment').value || 0;
+      const rate  = (+document.getElementById('interest').value || 0) / 100;
+      const years = +document.getElementById('term').value || 30;
+      const taxes = +document.getElementById('taxes').value || 0;
+      const ins   = +document.getElementById('insurance').value || 0;
+      const hoa   = +document.getElementById('hoa').value || 0;
+
+      const loan = Math.max(price - down, 0);
+      const n = years * 12;
+      const i = rate / 12;
+
+      let pAndI = 0;
+      if (i === 0) {
+        pAndI = loan / n;
+      } else {
+        pAndI = loan * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+      }
+
+      const escrow = (taxes + ins) / 12;
+      const total = pAndI + escrow + hoa;
+
+      document.getElementById('calcResult').textContent = fmtMoney(total);
+      document.getElementById('calcBreakdown').textContent =
+        `Principal & Interest ${fmtMoney(pAndI)} + Taxes/Insurance ${fmtMoney(escrow)} + HOA ${fmtMoney(hoa)}`;
+    }
+    document.getElementById('calcBtn').addEventListener('click', calcMortgage);
+    ['homePrice','downPayment','interest','term','taxes','insurance','hoa'].forEach(id=>{
+      document.getElementById(id).addEventListener('change', calcMortgage);
+      document.getElementById(id).addEventListener('keyup', (e)=>{ if(e.key==='Enter') calcMortgage(); });
+    });
+    calcMortgage();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('*').forEach(el => el.style.scrollBehavior = 'auto');
+    }
+  </script>
+</body>
+</html>
