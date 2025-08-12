@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinEdge – Modern Loan Solutions</title>
+  <meta name="description" content="Fast, transparent and secure online loans for every milestone.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Custom fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+    :root {
+      --brand-600: #0066ff;
+      --brand-700: #004ecc;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+    .text-brand {
+      color: var(--brand-600);
+    }
+    .bg-brand {
+      background-color: var(--brand-600);
+    }
+    .border-brand {
+      border-color: var(--brand-600);
+    }
+    .btn-primary {
+      @apply inline-block bg-brand text-white px-7 py-3.5 rounded-md font-semibold transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-300;
+    }
+    .btn-secondary {
+      @apply inline-block border border-brand text-brand px-7 py-3.5 rounded-md font-semibold transition-all duration-300 hover:bg-brand hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300;
+    }
+    /* Animated underline on hover */
+    .link-underline {
+      position: relative;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: var(--brand-600);
+      transition: width 0.3s;
+    }
+    .link-underline:hover::after {
+      width: 100%;
+    }
+    /* Gradient overlay for hero */
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(0,102,255,0.8) 0%, rgba(0,78,204,0.6) 100%);
+    }
+    /* Animation for counters */
+    .animate-count {
+      transition: all 0.5s;
+    }
+    /* Custom grid */
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    /* Slider dots */
+    .slick-dots li button:before {
+      color: #fff;
+    }
+    /* Sticky nav shadow */
+    .sticky-nav {
+      transition: box-shadow 0.3s;
+    }
+    .sticky-nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+  <!-- 1. Top Notification Bar -->
+  <section id="notification" class="bg-brand text-white text-sm py-2">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <p>🎉 Limited-time offer: 0% interest for the first 3 months. <a href="#loan-types" class="underline">Learn more</a></p>
+      <button onclick="document.getElementById('notification').remove()" class="text-white hover:text-gray-200">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- 2. Header / Navigation -->
+  <header id="navbar" class="sticky-nav bg-white/90 backdrop-blur-sm fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-brand">
+        Fin<span class="text-gray-900">Edge</span>
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#loan-types" class="link-underline text-gray-700 hover:text-brand">Loans</a>
+        <a href="#features" class="link-underline text-gray-700 hover:text-brand">Features</a>
+        <a href="#about" class="link-underline text-gray-700 hover:text-brand">About</a>
+        <a href="#contact" class="link-underline text-gray-700 hover:text-brand">Contact</a>
+      </nav>
+      <div class="hidden md:flex space-x-3">
+        <a href="#login" class="btn-secondary">Log In</a>
+        <a href="#apply" class="btn-primary">Apply Now</a>
+      </div>
+      <button id="hamburger" class="md:hidden text-2xl text-gray-700">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-40 p-6 hidden">
+    <div class="flex justify-between items-center mb-8">
+      <span class="text-2xl font-bold text-brand">FinEdge</span>
+      <button id="close-menu" class="text-2xl text-gray-700">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-4">
+      <a href="#loan-types" class="text-lg text-gray-700 hover:text-brand">Loans</a>
+      <a href="#features" class="text-lg text-gray-700 hover:text-brand">Features</a>
+      <a href="#about" class="text-lg text-gray-700 hover:text-brand">About</a>
+      <a href="#contact" class="text-lg text-gray-700 hover:text-brand">Contact</a>
+      <hr class="my-4" />
+      <a href="#login" class="btn-secondary text-center">Log In</a>
+      <a href="#apply" class="btn-primary text-center">Apply Now</a>
+    </nav>
+    <script>
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+      });
+    </script>
+  </div>
+
+  <!-- 3. Hero Section -->
+  <section id="hero" class="relative mt-[72px] min-h-[calc(100vh-72px)] flex items-center">
+    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1650&q=80" alt="Hero" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="container mx-auto px-4 text-white relative z-10">
+      <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-4">
+        Fast, transparent &amp; secure loans <br />for every milestone.
+      </h1>
+      <p class="max-w-2xl text-lg mb-8">
+        From home ownership to launching your dream business, FinEdge delivers tailored financing in minutes.
+      </p>
+      <a href="#apply" class="btn-primary text-lg px-8 py-4">Get Started in 5 Minutes</a>
+    </div>
+  </section>
+
+  <!-- 4. Loan Types -->
+  <section id="loan-types" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Choose the right loan for you</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">We offer flexible options with competitive rates and no hidden fees.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Personal Loan -->
+        <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-shadow">
+          <i class="fas fa-user text-3xl text-brand mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Personal Loan</h3>
+          <p class="text-gray-600 mb-4">Borrow up to $50,000 and pay in up to 7 years.</p>
+          <ul class="text-sm text-gray-500 mb-4 space-y-1">
+            <li><i class="fas fa-check text-brand mr-2"></i>Instant approval</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>Fixed low rates</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>No collateral</li>
+          </ul>
+          <a href="#personal-loan" class="btn-primary w-full text-center">Apply Now</a>
+        </div>
+        <!-- Business Loan -->
+        <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-shadow">
+          <i class="fas fa-briefcase text-3xl text-brand mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Business Loan</h3>
+          <p class="text-gray-600 mb-4">Get up to $500,000 to grow your business.</p>
+          <ul class="text-sm text-gray-500 mb-4 space-y-1">
+            <li><i class="fas fa-check text-brand mr-2"></i>Fast funding</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>Flexible repayment</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>Expert advice</li>
+          </ul>
+          <a href="#business-loan" class="btn-primary w-full text-center">Apply Now</a>
+        </div>
+        <!-- Home Loan -->
+        <div class="border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-shadow">
+          <i class="fas fa-home text-3xl text-brand mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Home Loan</h3>
+          <p class="text-gray-600 mb-4">Finance your dream home with up to 30-year terms.</p>
+          <ul class="text-sm text-gray-500 mb-4 space-y-1">
+            <li><i class="fas fa-check text-brand mr-2"></i>Low rates</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>Up to 95% LTV</li>
+            <li><i class="fas fa-check text-brand mr-2"></i>Dedicated advisor</li>
+          </ul>
+          <a href="#home-loan" class="btn-primary w-full text-center">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Features -->
+  <section id="features" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Why FinEdge?</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">We’re reimagining lending with transparency and speed.</p>
+      <div class="grid-features">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-bolt text-brand"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Lightning-fast approval</h4>
+            <p class="text-gray-600">Get approved in as little as 5 minutes.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-eye text-brand"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">100% Transparent</h4>
+            <p class="text-gray-600">No hidden fees, no surprises.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-lock text-brand"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Bank-level security</h4>
+            <p class="text-gray-600">256-bit encryption keeps your data safe.</p>
+          </div>
+        </div>
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-headset text-brand"></i>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">24/7 Support</h4>
+            <p class="text-gray-600">Real humans ready to help anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How It Works -->
+  <section id="how-it-works" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">How it works</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Three simple steps to your funds.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="p-4">
+          <div class="w-28 h-28 mx-auto mb-4 rounded-full bg-brand/10 flex items-center justify-center">
+            <span class="text-5xl font-bold text-brand">1</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Apply online</h4>
+          <p class="text-gray-600">Fill out our secure 5-minute form.</p>
+        </div>
+        <div class="p-4">
+          <div class="w-28 h-28 mx-auto mb-4 rounded-full bg-brand/10 flex items-center justify-center">
+            <span class="text-5xl font-bold text-brand">2</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Get approved</h4>
+          <p class="text-gray-600">Receive an instant decision.</p>
+        </div>
+        <div class="p-4">
+          <div class="w-28 h-28 mx-auto mb-4 rounded-full bg-brand/10 flex items-center justify-center">
+            <span class="text-5xl font-bold text-brand">3</span>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Receive funds</h4>
+          <p class="text-gray-600">Money in your account within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Interest Rates -->
+  <section id="rates" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Transparent & competitive rates</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Choose between fixed or variable rates at terms that fit your budget.</p>
+      <div class="max-w-4xl mx-auto">
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-gray-200 rounded-lg overflow-hidden">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="text-left p-4">Loan Type</th>
+                <th class="text-left p-4">Fixed APR</th>
+                <th class="text-left p-4">Variable APR</th>
+                <th class="text-left p-4">Max Term</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t border-gray-200">
+                <td class="p-4">Personal</td>
+                <td class="p-4">6.99%</td>
+                <td class="p-4">7.25%</td>
+                <td class="p-4">7 years</td>
+              </tr>
+              <tr class="border-t border-gray-200">
+                <td class="p-4">Business</td>
+                <td class="p-4">5.75%</td>
+                <td class="p-4">6.25%</td>
+                <td class="p-4">10 years</td>
+              </tr>
+              <tr class="border-t border-gray-200">
+                <td class="p-4">Home</td>
+                <td class="p-4">3.25%</td>
+                <td class="p-4">3.75%</td>
+                <td class="p-4">30 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-4 text-center">Rates as of <span id="rate-date"></span>. Subject to credit approval.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Loan Calculator -->
+  <section id="calculator" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Estimate your monthly payment</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Adjust the sliders to see what you’ll pay.</p>
+      <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label class="block text-sm font-medium mb-1">Loan Amount</label>
+            <input id="loanAmount" type="range" min="1000" max="50000" value="15000" class="w-full mb-2">
+            <span id="loanAmountValue" class="text-brand font-semibold">$15,000</span>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Term (months)</label>
+            <input id="loanTerm" type="range" min="6" max="84" value="36" class="w-full mb-2">
+            <span id="loanTermValue" class="text-brand font-semibold">36 months</span>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <p class="text-gray-600">Estimated Monthly Payment</p>
+          <p id="monthlyPayment" class="text-4xl font-bold text-brand mt-2">$463.16</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Testimonials -->
+  <section id="testimonials" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Trusted by thousands</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Real stories from real customers.</p>
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 mb-4">“FinEdge helped me consolidate my debt in one day. The process was so smooth!”</p>
+          <footer class="flex items-center space-x-3">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">Sarah J.</p>
+              <p class="text-sm text-gray-500">Personal Loan</p>
+            </div>
+          </footer>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 mb-4">“I secured a $200k business loan and expanded my bakery to three locations.”</p>
+          <footer class="flex items-center space-x-3">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">David L.</p>
+              <p class="text-sm text-gray-500">Business Loan</p>
+            </div>
+          </footer>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          <p class="text-gray-700 mb-4">“Got pre-approved for our first home in 10 minutes. Highly recommend!”</p>
+          <footer class="flex items-center space-x-3">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold">Maria & Alex</p>
+              <p class="text-sm text-gray-500">Home Loan</p>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Statistics -->
+  <section id="stats" class="py-16 bg-brand text-white">
+    <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <p class="text-4xl font-bold animate-count" data-target="25000">0</p>
+        <p class="text-sm uppercase tracking-wider">Happy Customers</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold animate-count" data-target="750">0</p>
+        <p class="text-sm uppercase tracking-wider">Million Funded</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold animate-count" data-target="98">0</p>
+        <span class="text-2xl">%</span>
+        <p class="text-sm uppercase tracking-wider">Approval Rate</p>
+      </div>
+      <div>
+        <p class="text-4xl font-bold animate-count" data-target="4.8">0</p>
+        <span class="text-2xl">/5</span>
+        <p class="text-sm uppercase tracking-wider">Customer Rating</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. About Us -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">About FinEdge</h2>
+        <p class="text-gray-700 mb-4">
+          Founded in 2017, FinEdge is on a mission to make borrowing transparent, affordable and stress-free. By leveraging AI and open-banking technology, we cut out the red tape and deliver funds in hours, not weeks.
+        </p>
+        <p class="text-gray-700 mb-6">
+          We’re proud to be carbon-neutral and give 1% of profits to financial-literacy programs worldwide.
+        </p>
+        <a href="#team" class="btn-primary">Meet the Team</a>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" class="w-full rounded-xl shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FAQ -->
+  <section id="faq" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Frequently asked questions</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Everything you need to know.</p>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <details class="bg-white p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold">What credit score do I need?</summary>
+          <p class="mt-2 text-gray-600">We accept scores as low as 580 for personal loans and 620 for home loans.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold">Are there prepayment penalties?</summary>
+          <p class="mt-2 text-gray-600">No. You can pay off your loan early at no extra cost.</p>
+        </details>
+        <details class="bg-white p-4 rounded-lg shadow">
+          <summary class="cursor-pointer font-semibold">How is my rate determined?</summary>
+          <p class="mt-2 text-gray-600">Rates are based on credit score, income, loan amount and term.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Security & Compliance -->
+  <section id="security" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Your data is safe with us</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">FinEdge is PCI-DSS compliant, SOC 2 certified and uses 256-bit encryption.</p>
+      <div class="flex justify-center space-x-8">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/badge.svg" alt="PCI-DSS" class="h-12">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/badge.svg" alt="SOC-2" class="h-12">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/badge.svg" alt="SSL" class="h-12">
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Blog / Insights -->
+  <section id="insights" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Latest insights</h2>
+      <p class="text-center text-gray-600 max-w-xl mx-auto mb-12">Tips, guides and market updates.</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=60" alt="Blog" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <span class="text-sm text-brand font-semibold">Credit Score</span>
+            <h3 class="font-bold text-lg mt-1 mb-2">5 ways to boost your credit score in 30 days</h3>
+            <a href="#" class="text-brand font-semibold text-sm">Read More →</a>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1554224155-3a0892a22ae2?auto=format&fit=crop&w=500&q=60" alt="Blog" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <span class="text-sm text-brand font-semibold">Home Buying</span>
+            <h3 class="font-bold text-lg mt-1 mb-2">First-time home buyer checklist 2024</h3>
+            <a href="#" class="text-brand font-semibold text-sm">Read More →</a>
+          </div>
+        </article>
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1526304640581-d334cdb8d11b?auto=format&fit=crop&w=500&q=60" alt="Blog" class="w-full h-40 object-cover">
+          <div class="p-4">
+            <span class="text-sm text-brand font-semibold">Business</span>
+            <h3 class="font-bold text-lg mt-1 mb-2">How to get funding for your startup</h3>
+            <a href="#" class="text-brand font-semibold text-sm">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Contact CTA -->
+  <section id="contact-cta" class="py-16 bg-brand text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to get started?</h2>
+      <p class="max-w-xl mx-auto mb-8">Our loan specialists are standing by 24/7 to guide you.</p>
+      <a href="#apply" class="btn-primary bg-white text-brand hover:bg-gray-100">Apply Now</a>
+    </div>
+  </section>
+
+  <!-- 16. Footer -->
+  <footer id="footer" class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="text-xl font-bold text-brand mb-4">FinEdge</h4>
+          <p class="text-gray-400">Modern loans for modern lives.</p>
+        </div>
+        <div>
+          <h5 class="font-semibold mb-4">Products</h5>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#personal-loan" class="hover:text-white">Personal Loan</a></li>
+            <li><a href="#business-loan" class="hover:text-white">Business Loan</a></li>
+            <li><a href="#home-loan" class="hover:text-white">Home Loan</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-semibold mb-4">Company</h5>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="#careers" class="hover:text-white">Careers</a></li>
+            <li><a href="#press" class="hover:text-white">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-semibold mb-4">Contact</h5>
+          <ul class="space-y-2 text-gray-400">
+            <li><i class="fas fa-envelope mr-2"></i><a href="mailto:support@finedge.com" class="hover:text-white">support@finedge.com</a></li>
+            <li><i class="fas fa-phone mr-2"></i><a href="tel:+1800FINEDGE" class="hover:text-white">1-800-FINEDGE</a></li>
+          </ul>
+          <div class="flex space-x-4 mt-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; <span id="year"></span> FinEdge Inc. All rights reserved. <a href="#privacy" class="underline">Privacy</a> · <a href="#terms" class="underline">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 17. Back-to-top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-brand text-white w-12 h-12 rounded-full shadow-lg opacity-0 transition-all duration-300 scale-0">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+    closeMenu.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+
+    // Sticky nav shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Back-to-top button
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.style.opacity = window.scrollY > 300 ? '1' : '0';
+      backToTop.style.transform = window.scrollY > 300 ? 'scale(1)' : 'scale(0)';
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Counter animation
+    const counters = document.querySelectorAll('.animate-count');
+    const countUp = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.dataset.target;
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+          const update = () => {
+            current += step;
+            if (current < target) {
+              el.textContent = current.toFixed(1);
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = target;
+            }
+          };
+          update();
+          observer.unobserve(el);
+        }
+      });
+    };
+    const observer = new IntersectionObserver(countUp, { threshold: 0.5 });
+    counters.forEach(counter => observer.observe(counter));
+
+    // Loan calculator
+    const loanAmount = document.getElementById('loanAmount');
+    const loanTerm = document.getElementById('loanTerm');
+    const loanAmountValue = document.getElementById('loanAmountValue');
+    const loanTermValue = document.getElementById('loanTermValue');
+    const monthlyPayment = document.getElementById('monthlyPayment');
+    const updatePayment = () => {
+      const principal = +loanAmount.value;
+      const term = +loanTerm.value;
+      const rate = 0.07 / 12;
+      const payment = (principal * rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+      loanAmountValue.textContent = `$${principal.toLocaleString()}`;
+      loanTermValue.textContent = `${term} months`;
+      monthlyPayment.textContent = payment.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    };
+    loanAmount.addEventListener('input', updatePayment);
+    loanTerm.addEventListener('input', updatePayment);
+    updatePayment();
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('rate-date').textContent = new Date().toLocaleDateString();
+
+    // GSAP scroll animations
+    gsap.registerPlugin();
+    gsap.from("section > div", {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "section",
+        start: "top 80%",
+      },
+    });
+  </script>
+</body>
+</html>
