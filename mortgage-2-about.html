@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Apex Home Loans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#D4AF37',
+                        'brand-brown': '#3E2723',
+                        'brand-dark': '#121212',
+                        'brand-light': '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Reusing styles for consistency */
+        .page-hero-bg {
+            background-color: #121212;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-gold {
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        .team-card img {
+            transition: transform 0.3s ease;
+        }
+        img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- IMPORTANT: This link should point to your main index.html file -->
+            <a href="index.html" class="text-2xl font-bold text-brand-brown">Apex Home Loans</a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                 <!-- You can add an "About" link here in your main index.html file -->
+                <a href="index.html#home-buyers" class="text-gray-600 hover:text-brand-gold">First-Time Buyers</a>
+                <a href="index.html#loan-options" class="text-gray-600 hover:text-brand-gold">Loan Options</a>
+                <a href="index.html#why-us" class="text-gray-600 hover:text-brand-gold">Why Us</a>
+                <a href="index.html#calculator" class="text-gray-600 hover:text-brand-gold">Calculator</a>
+                <a href="index.html#contact" class="bg-brand-gold text-white px-4 py-2 rounded-md font-semibold hover:bg-yellow-600 transition">Get Started</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="index.html#home-buyers" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">First-Time Buyers</a>
+            <a href="index.html#loan-options" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Loan Options</a>
+            <a href="index.html#why-us" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Why Us</a>
+            <a href="index.html#calculator" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Calculator</a>
+            <a href="index.html#contact" class="block px-6 py-3 bg-brand-gold text-white text-center font-semibold">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Section 1: Page Hero -->
+    <section class="page-hero-bg text-white py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">About Apex Home Loans</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Connecting families with their dream homes through trust, transparency, and tailored financial solutions.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Our Story -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-brand-brown mb-4">Our Story: From Vision to Reality</h2>
+                    <p class="text-gray-600 mb-4">Apex Home Loans was founded on a simple yet powerful idea: the mortgage process should be clear, simple, and centered around the client. After years in the financial industry, our founders saw a need for a brokerage that prioritized education and advocacy over volume. They envisioned a company where every client felt like their only client.</p>
+                    <p class="text-gray-600">Launched in 2015, we've since grown into a trusted name in residential lending, having helped hundreds of families navigate the path to homeownership. Our commitment to that founding principle has never wavered.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="Blueprint and documents on a table" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Our Mission & Vision -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-brand-brown mb-10">Our Guiding Philosophy</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-brand-brown mb-3">Our Mission</h3>
+                    <p class="text-gray-600 max-w-lg mx-auto">To empower our clients with the knowledge and financial tools necessary to make confident, informed home financing decisions that build long-term wealth and stability.</p>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-brand-brown mb-3">Our Vision</h3>
+                    <p class="text-gray-600 max-w-lg mx-auto">To be the most trusted and respected mortgage brokerage in the region, known for our unwavering integrity, exceptional service, and positive impact on the communities we serve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Meet the Team -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-brown mb-12">Our Dedicated Professionals</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member Card -->
+                <div class="text-center team-card">
+                    <div class="relative inline-block overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop" alt="Team member portrait" class="w-full h-80">
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mt-4">James Carter</h3>
+                    <p class="text-brand-gold">Founder & Principal Broker</p>
+                </div>
+                <!-- Team Member Card -->
+                <div class="text-center team-card">
+                    <div class="relative inline-block overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Team member portrait" class="w-full h-80">
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mt-4">Maria Rodriguez</h3>
+                    <p class="text-brand-gold">Senior Loan Officer</p>
+                </div>
+                <!-- Team Member Card -->
+                <div class="text-center team-card">
+                    <div class="relative inline-block overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" alt="Team member portrait" class="w-full h-80">
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-brown mt-4">David Chen</h3>
+                    <p class="text-brand-gold">Processing Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Our Core Values -->
+    <section class="py-16 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-brand-brown mb-12">What We Stand For</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-8">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Integrity</h3>
+                    <p class="text-gray-600">Honesty and transparency are the cornerstones of our business. We do the right thing, always.</p>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Client-First</h3>
+                    <p class="text-gray-600">Your goals are our goals. We listen, we understand, and we put your best interests at the forefront of every decision.</p>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-semibold text-brand-brown mb-2">Excellence</h3>
+                    <p class="text-gray-600">We strive for perfection in every detail, from finding the best loan product to ensuring a smooth, on-time closing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why We're Different -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-brand-brown mb-4">The Apex Advantage</h2>
+                <p class="text-gray-600 mb-4">In a crowded market, we stand out by being your dedicated partner, not just a service provider. Unlike large banks that offer a limited menu of loan products, we have access to a vast marketplace of lenders. This allows us to shop on your behalf, finding competitive rates and unique loan programs that others can't offer. We combine the resources of a large lender with the personal touch of a small, local business.</p>
+                <a href="index.html#contact" class="text-brand-gold font-semibold hover:underline">Experience the Difference &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Community Involvement -->
+    <section class="py-16 bg-brand-brown text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2070&auto=format&fit=crop" alt="Volunteers working together in the community" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4">Rooted in Our Community</h2>
+                    <p class="text-gray-300">We believe that strong communities are built one home at a time. Apex Home Loans is proud to be an active participant in our local community. From sponsoring youth sports teams to volunteering at local housing charities, we are committed to giving back to the neighborhoods we help build.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Apex Home Loans</h3>
+                    <p class="text-gray-400">Your partner in homeownership.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home-buyers" class="text-gray-400 hover:text-brand-gold">First-Time Buyers</a></li>
+                        <li><a href="index.html#loan-options" class="text-gray-400 hover:text-brand-gold">Loan Options</a></li>
+                        <li><a href="#top" class="text-gray-400 hover:text-brand-gold">About Us</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-brand-gold">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400">123 Mortgage Lane, Suite 100<br>Finance City, ST 12345</p>
+                    <p class="text-gray-400 mt-2">Email: contact@apexhlaons.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gold">
+                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014V8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.47 9.763H6.48V8.59H3.535v7.748zM17.668 1H6.328C3.965 1 2 2.984 2 5.356v13.288C2 21.016 3.965 23 6.328 23h11.34c2.363 0 4.322-1.984 4.322-4.356V5.356C22 2.984 20.032 1 17.668 1z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <p>&copy; 2025 Apex Home Loans. All Rights Reserved. | NMLS ID #234567</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
