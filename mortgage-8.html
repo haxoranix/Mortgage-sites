@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MortgagePro — Experts In Getting You Approved</title>
+
+  <!-- Tailwind (CDN for speed while prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#2563eb', dark: '#1e40af', light: '#dbeafe' },
+            ink: '#0f172a'
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(2,8,23,.06)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* nicer anchor offsets for fixed header */
+    :target{ scroll-margin-top: 96px; }
+    /* simple dot slider */
+    .dot{ width:.5rem;height:.5rem;border-radius:9999px;background:#cbd5e1}
+    .dot.active{ background:#2563eb }
+  </style>
+</head>
+<body class="bg-white text-ink antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="h-16 flex items-center justify-between">
+        <a class="flex items-center gap-2 font-semibold" href="#">
+          <span class="inline-flex w-8 h-8 bg-blue-600 text-white items-center justify-center rounded-lg shadow-sm">M</span>
+          <span class="hidden sm:inline text-slate-800">MortgagePro</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-slate-600">
+          <a href="#reviews" class="hover:text-blue-600">Reviews</a>
+          <a href="#steps" class="hover:text-blue-600">How it works</a>
+          <a href="#team" class="hover:text-blue-600">Team</a>
+          <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a class="text-slate-600 hover:text-blue-600" href="#">Login</a>
+          <a class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+             href="#contact"><i class="fa-solid fa-bolt"></i><span>Get Started</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center py-14">
+        <div>
+          <p class="inline-flex items-center gap-2 text-sm text-blue-700 bg-blue-50 px-3 py-1 rounded-full mb-5">
+            <i class="fa-solid fa-shield-check"></i> FCA regulated mortgage brokers
+          </p>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            EXPERTS IN GETTING<br><span class="text-blue-600">YOU APPROVED</span>
+          </h1>
+          <p class="mt-5 text-slate-600 max-w-xl">
+            Struggling to get a mortgage? We specialise in approvals for complex cases —
+            self-employed, low deposit, credit issues, and more.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold"
+               href="#contact">Get Start Online</a>
+            <a class="border border-slate-300 hover:border-slate-400 px-5 py-3 rounded-lg font-semibold"
+               href="#steps">Learn More</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <!-- HERO IMAGE — change the URL below -->
+          <!-- Replace with your own image or local asset; Unsplash fallback provided -->
+          <img
+            src="https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&w=1400&q=80"
+            alt="Modern wooden homes at sunset"
+            class="rounded-2xl shadow-soft w-full aspect-[16/10] object-cover"
+            />
+          <!-- SMALL DOODLE / DECOR (optional SVG) -->
+          <svg class="absolute -top-4 -right-4 w-14 h-14 text-blue-300" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12c4-8 12 8 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW STRIP -->
+  <section id="reviews" class="border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid lg:grid-cols-[1fr_1.2fr] gap-10 items-start">
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" class="w-6 h-6" alt="Google" />
+          <span class="text-sm text-slate-500">Google Reviews</span>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="p-5 rounded-xl border border-slate-200">
+            <div class="text-3xl font-bold">19+</div>
+            <div class="text-slate-500">Years in market</div>
+          </div>
+          <div class="p-5 rounded-xl border border-slate-200">
+            <div class="text-3xl font-bold">4.8</div>
+            <div class="text-slate-500">Rating on Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold">ONE OF THE UK'S TOP RATED MORTGAGE BROKERS</h3>
+
+        <!-- CLIENT QUOTE CARD -->
+        <div class="p-6 rounded-2xl border border-slate-200 shadow-soft bg-white">
+          <p class="text-slate-700">
+            From the initial consultation to the final walkthrough, the team was professional,
+            transparent and a pleasure to work with. They took the time to listen to my needs and
+            preferences, and they went above and beyond to make sure I could secure a loan that fit
+            my situation.
+          </p>
+          <div class="mt-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <!-- AVATAR — change here -->
+              <img class="w-10 h-10 rounded-full object-cover"
+                   src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=120&q=80"
+                   alt="Client avatar">
+              <div class="text-sm">
+                <div class="font-semibold">Brian Donniel</div>
+                <div class="text-slate-500">Bromley, Kent</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="w-9 h-9 rounded-full border border-slate-300 hover:bg-slate-50" id="prevTest">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="w-9 h-9 rounded-full border border-slate-300 hover:bg-slate-50" id="nextTest">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- small pill CTA -->
+        <a href="#contact" class="inline-flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600 text-white">
+            <i class="fa-solid fa-phone"></i>
+          </span>
+          <div>
+            <div class="font-semibold">Get in Touch</div>
+            <p class="text-sm text-slate-500 -mt-0.5">Speak with a mortgage expert, Mon–Sun</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE STEPS -->
+  <section id="steps" class="py-14 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between mb-8">
+        <h3 class="text-3xl font-extrabold">SIMPLE STEPS TO GET <span class="text-blue-600">YOU APPROVED</span> ✅</h3>
+        <a href="#contact" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold">Get Start Online</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-soft">
+          <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-700 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Criteria Check</h4>
+          <p class="text-slate-600">Understand lender criteria and match your profile with specialist products.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-soft">
+          <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-700 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Documents</h4>
+          <p class="text-slate-600">We prepare a strong application file so underwriters can approve quickly.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-soft">
+          <div class="w-12 h-12 rounded-lg bg-blue-600/10 text-blue-700 flex items-center justify-center mb-4">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Applications</h4>
+          <p class="text-slate-600">We submit to the right lenders and negotiate the best rates for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGS + IMAGE SPLIT -->
+  <section class="py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <p class="text-sky-600 font-medium">What we do?</p>
+      <h3 class="text-2xl sm:text-3xl font-extrabold mt-2 max-w-3xl">
+        We specialise in arranging mortgages for people who’ve been turned
+        down elsewhere, using our expertise to find the right solution when others can’t.
+      </h3>
+
+      <div class="flex flex-wrap gap-4 mt-6 text-slate-700 font-medium">
+        <span class="px-3 py-1 rounded-full bg-slate-100">Understanding</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100">Practical</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100">Creative</span>
+        <span class="px-3 py-1 rounded-full bg-slate-100">Reliable</span>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-[1fr_1fr] gap-6 items-center">
+        <!-- LEFT IMAGE — change here -->
+        <img class="rounded-2xl object-cover w-full aspect-[16/10] border border-slate-200"
+             src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80"
+             alt="Scandinavian living room scene"/>
+        <!-- RIGHT IMAGE — change here -->
+        <div class="relative rounded-2xl overflow-hidden aspect-[16/10] border border-slate-200">
+          <img class="w-full h-full object-cover"
+               src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1400&q=80"
+               alt="Minimal chair and table">
+          <a href="#contact" class="absolute left-4 bottom-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg border border-slate-200 font-semibold">Get Start Online</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAD CREDIT BANNER -->
+  <section class="py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="rounded-3xl bg-gradient-to-r from-blue-600 to-blue-500 text-white p-10 shadow-soft">
+        <h3 class="text-2xl sm:text-3xl font-extrabold">Bad Credit?</h3>
+        <p class="mt-2 text-blue-100 max-w-2xl">We can still help. Access to specialist lenders for CCJs, defaults, low credit score and more.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="px-3 py-1 rounded-full bg-white/15">Low / Poor Credit Score</span>
+          <span class="px-3 py-1 rounded-full bg-white/15">Missed Payments</span>
+          <span class="px-3 py-1 rounded-full bg-white/15">CCJs</span>
+          <span class="px-3 py-1 rounded-full bg-white/15">Debt Management</span>
+          <span class="px-3 py-1 rounded-full bg-white/15">Defaults</span>
