@@ -1,1 +1,151 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mortgage Website Templates</title>
+  <style>
+    :root { --gap: 1rem; }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: #f7f7f8;
+      color: #111;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 1;
+      background: #fff; border-bottom: 1px solid #e5e7eb;
+      padding: 1.25rem 1rem; text-align: center; font-weight: 700; font-size: 1.25rem;
+    }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 1.25rem; }
+
+    .grid {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      align-items: start;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform .08s ease, box-shadow .08s ease;
+    }
+    .card:focus-within,
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+
+    .preview {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;       /* nice card shape */
+      background: #f1f5f9;       /* subtle skeleton bg */
+      overflow: hidden;
+    }
+    .preview img,
+    .preview iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+      display: block;
+    }
+    .preview iframe { pointer-events: none; } /* clicking opens the card link */
+
+    .meta {
+      padding: .75rem .9rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .5rem;
+    }
+    .title {
+      font-weight: 600;
+    }
+    .open {
+      text-decoration: none; font-weight: 600; font-size: .9rem;
+      background: #111827; color: #fff; padding: .45rem .7rem; border-radius: 8px;
+    }
+    .open:focus { outline: 2px solid #11182755; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <header>Mortgage Website Templates</header>
+  <main class="wrap">
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </main>
+
+  <script>
+    // CONFIG — adjust if you change folder names
+    const TOTAL = 30;
+    const BASE  = "https://haxoranix.github.io/Mortgage-sites/mortgage-";
+    const THUMBS_DIR = "thumbs"; // expects thumbs/mortgage-1.jpg, etc.
+
+    const grid = document.getElementById('grid');
+
+    // Lazy-load previews when cards scroll into view
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const holder = entry.target.querySelector('.preview');
+        if (holder && !holder.dataset.loaded) {
+          const n = holder.dataset.n;
+          attachPreview(holder, n);
+          holder.dataset.loaded = "1";
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "300px 0px" });
+
+    // Build cards
+    for (let n = 1; n <= TOTAL; n++) {
+      const url = `${BASE}${n}.html`;
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <a class="preview" data-n="${n}" href="${url}" aria-label="Open Template ${n}">
+          <!-- thumb or iframe injected lazily -->
+        </a>
+        <div class="meta">
+          <div class="title">Template #${n}</div>
+          <a class="open" href="${url}">Open</a>
+        </div>
+      `;
+      grid.appendChild(card);
+      io.observe(card);
+    }
+
+    // Try thumbnail first, then fall back to a live iframe preview
+    function attachPreview(holder, n) {
+      const thumb = new Image();
+      thumb.alt = `Template ${n} thumbnail`;
+      thumb.loading = "lazy";
+      thumb.src = `${THUMBS_DIR}/mortgage-${n}.jpg`;
+
+      let used = false;
+
+      thumb.onload = () => {
+        holder.appendChild(thumb);
+        used = true;
+      };
+      thumb.onerror = () => {
+        if (used) return;
+        // Fallback: live preview of the published page (same-origin)
+        const iframe = document.createElement('iframe');
+        iframe.loading = "lazy";
+        iframe.referrerPolicy = "no-referrer-when-downgrade";
+        iframe.src = `${BASE}${n}.html`;
+        holder.appendChild(iframe);
+      };
+    }
+  </script>
+</body>
+</html>
