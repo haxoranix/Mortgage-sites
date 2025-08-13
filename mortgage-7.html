@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CanMortgage Pro - Canada's Premier Mortgage Brokerage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    /* Smooth anchor offset for fixed nav */
+    :target { scroll-margin-top: 84px; }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#home" class="flex items-center space-x-2">
+        <i class="fas fa-home text-blue-600 text-2xl"></i>
+        <span class="text-xl font-bold text-gray-800">CanMortgage Pro</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+        <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
+        <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+        <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition">Testimonials</a>
+        <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+      </div>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+        Get Pre-Approved
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-pattern bg-gradient-to-r from-blue-700 to-blue-900 text-white pt-24 pb-20">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Dream Home Starts Here</h1>
+        <p class="text-xl mb-8 text-blue-100">Canada's trusted mortgage brokerage helping thousands secure the best mortgage rates since 2010</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <button class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+            <i class="fas fa-calculator mr-2"></i>Get Pre-Approved
+          </button>
+          <a href="tel:1-800-MORTGAGE" class="border-2 border-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-blue-700 transition">
+            <i class="fas fa-phone mr-2"></i>Call Us: 1-800-MORTGAGE
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <!-- Canadian home / neighborhood -->
+        <img
+          src="https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=1280&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=640&q=80 640w,
+          https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=960&q=80 960w,
+            https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=1600&q=80 1600w
+          "
+          sizes="(max-width: 768px) 100vw, 600px"
+          alt="Happy couple in front of a modern Canadian home"
+          class="rounded-lg shadow-xl"
+          width="1280" height="853" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Mortgage Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          We offer comprehensive mortgage solutions across Canada to help you secure the best financing for your property
+        </p>
+      </div>
+
+      <!-- Optional service imagery strip -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <img
+          loading="lazy"
+          class="w-full h-40 object-cover rounded-lg"
+          alt="Suburban Canadian neighborhood"
+          src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=900&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=600&q=80 600w,
+            https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=900&q=80 900w,
+            https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1200&q=80 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 33vw" />
+        <img
+          loading="lazy"
+          class="w-full h-40 object-cover rounded-lg"
+          alt="Signing mortgage documents"
+          src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=900&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600&q=80 600w,
+            https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=900&q=80 900w,
+            https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=1200&q=80 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 33vw" />
+        <img
+          loading="lazy"
+          class="w-full h-40 object-cover rounded-lg"
+          alt="Couple reviewing mortgage rates"
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80 600w,
+            https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80 900w,
+            https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 33vw" />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Best Rate Guarantee</h3>
+          <p class="text-gray-600">We negotiate with 50+ lenders to find you the lowest mortgage rates in Canada</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-file-alt text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">First-Time Home Buyer</h3>
+          <p class="text-gray-600">Special programs with 5% down payment and government incentives available</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-sync-alt text-purple-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Mortgage Renewals</h3>
+          <p class="text-gray-600">Renew your mortgage with better rates and terms before your current term ends</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <!-- Professional team / advisors -->
+          <img
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1280&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=640&q=80 640w,
+              https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=960&q=80 960w,
+              https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width: 768px) 100vw, 600px"
+            alt="Mortgage advisors collaborating in a modern office"
+            class="rounded-xl shadow-xl"
+            width="1280" height="853" />
+        </div>
+        <div class="md:w-1/2 md:pl-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Why Choose CanMortgage Pro</h2>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-2 rounded-full mr-4">
+                <i class="fas fa-check text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-800">National Coverage</h3>
+                <p class="text-gray-600">Serving all provinces and territories across Canada</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-2 rounded-full mr-4">
+                <i class="fas fa-check text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-800">No Brokerage Fees</h3>
+                <p class="text-gray-600">Our services are completely free for our clients</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-2 rounded-full mr-4">
+                <i class="fas fa-check text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-gray-800">24/7 Support</h3>
+                <p class="text-gray-600">Dedicated mortgage advisors available anytime</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied homeowners who secured their dream mortgage with us</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"CanMortgage Pro saved us over $15,000 on our mortgage! Their team was professional and made the process seamless."</p>
+          <div class="flex items-center">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=160&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=160&q=80 1x,
+                https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=320&q=80 2x
+              "
+              alt="Portrait of Sarah Johnson"
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+              width="96" height="96" />
+            <div>
+              <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+              <p class="text-gray-600 text-sm">Toronto, ON</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"As first-time home buyers, we were overwhelmed. CanMortgage Pro guided us every step of the way. Highly recommended!"</p>
+          <div class="flex items-center">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80 1x,
+                https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=320&q=80 2x
+              "
+              alt="Portrait of Michael Chen"
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+              width="96" height="96" />
+            <div>
+              <h4 class="font-bold text-gray-800">Michael Chen</h4>
+              <p class="text-gray-600 text-sm">Vancouver, BC</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex mb-4">
+            <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+          </div>
+          <p class="text-gray-600 mb-6">"Renewed my mortgage with CanMortgage Pro and got a rate 0.8% lower than my bank offered. Fantastic service!"</p>
+          <div class="flex items-center">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80"
+              srcset="
+                https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80 1x,
+                https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=320&q=80 2x
+              "
+              alt="Portrait of Robert Williams"
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+              width="96" height="96" />
+            <div>
+              <h4 class="font-bold text-gray-800">Robert Williams</h4>
+              <p class="text-gray-600 text-sm">Calgary, AB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-20 bg-blue-700 text-white overflow-hidden">
+    <!-- Optional background skyline for Canadian vibe -->
+    <img
+      loading="lazy"
+      alt="Toronto skyline silhouette"
+      class="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+      src="https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=1600&q=70"
+      srcset="
+       https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=900&q=70 900w,
+        https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=1200&q=70 1200w,
+        https://images.unsplash.com/photo-1726687676829-a336abd7eb46?auto=format&fit=crop&w=1600&q=70 1600w
+      "
+      sizes="100vw" />
+    <div class="container mx-auto px-4 relative">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-xl mb-8 text-blue-100">Our mortgage experts are standing by to help you secure the best financing options</p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <button class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+            <i class="fas fa-paper-plane mr-2"></i>Get Free Quote
+          </button>
+          <button class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition">
+            <i class="fas fa-calendar mr-2"></i>Schedule Consultation
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fas fa-home text-blue-400 text-2xl"></i>
+            <span class="text-xl font-bold">CanMortgage Pro</span>
+          </div>
+          <p class="text-gray-400">Canada's trusted mortgage brokerage since 2010</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white transition">Mortgage Calculator</a></li>
+            <li><a href="#" class="hover:text-white transition">Pre-Approval</a></li>
+            <li><a href="#" class="hover:text-white transition">Rates</a></li>
+            <li><a href="#" class="hover:text-white transition">FAQs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Contact Us</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="tel:1-800-MORTGAGE" class="hover:text-white"><i class="fas fa-phone mr-2"></i>1-800-MORTGAGE</a></li>
+            <li><a href="mailto:info@canmortgagepro.ca" class="hover:text-white"><i class="fas fa-envelope mr-2"></i>info@canmortgagepro.ca</a></li>
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Toronto, ON</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 CanMortgage Pro. All rights reserved. |
+          <a href="#" class="hover:text-white">Privacy Policy</a> |
+          <a href="#" class="hover:text-white">Terms of Service</a></p>
+        <p class="mt-2 text-xs text-gray-500">
+          Designed & Developed by HaxorAnix
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button -->
+  <div class="fixed bottom-6 right-6">
+    <button class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition" aria-label="Open chat">
+      <i class="fas fa-comments text-xl"></i>
+    </button>
+  </div>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) nav.classList.add('shadow-lg');
+      else nav.classList.remove('shadow-lg');
+    });
+  </script>
+</body>
+</html>
