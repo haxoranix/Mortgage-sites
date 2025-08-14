@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteFit | Premium Personal Training in California</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-black text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-yellow-500">Elite<span class="text-white">Fit</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+                <a href="#about" class="hover:text-yellow-500 transition">About</a>
+                <a href="#programs" class="hover:text-yellow-500 transition">Programs</a>
+                <a href="#schedule" class="hover:text-yellow-500 transition">Schedule</a>
+                <a href="#pricing" class="hover:text-yellow-500 transition">Pricing</a>
+                <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black pb-4 px-6">
+            <a href="#home" class="block py-2 hover:text-yellow-500 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-yellow-500 transition">About</a>
+            <a href="#programs" class="block py-2 hover:text-yellow-500 transition">Programs</a>
+            <a href="#schedule" class="block py-2 hover:text-yellow-500 transition">Schedule</a>
+            <a href="#pricing" class="block py-2 hover:text-yellow-500 transition">Pricing</a>
+            <a href="#contact" class="block py-2 hover:text-yellow-500 transition">Contact</a>
+            <a href="#booking" class="block mt-2 py-2 bg-yellow-500 text-black rounded font-bold text-center hover:bg-yellow-600 transition">Book Session</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">TRANSFORM YOUR BODY <span class="text-yellow-500">IN CALIFORNIA</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">Certified personal trainer helping clients achieve their fitness goals through customized workout plans and nutrition guidance.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">BOOK FREE CONSULTATION</a>
+                <a href="#programs" class="bg-transparent hover:bg-white hover:text-black border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">VIEW PROGRAMS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2">15+</div>
+                    <div class="text-gray-600">Years Experience</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2">500+</div>
+                    <div class="text-gray-600">Clients Trained</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2">98%</div>
+                    <div class="text-gray-600">Success Rate</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-yellow-500 mb-2">5</div>
+                    <div class="text-gray-600">Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5aaca0663?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Personal Trainer" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">ABOUT <span class="text-yellow-500">ELITEFIT</span></h2>
+                    <p class="text-gray-600 mb-6">Hi, I'm Michael, your certified personal trainer based in Los Angeles, California. With over 15 years of experience in the fitness industry, I've helped hundreds of clients transform their bodies and lives.</p>
+                    <p class="text-gray-600 mb-8">My approach combines scientifically-proven training methods with personalized attention to ensure you achieve sustainable results. Whether you're looking to lose weight, build muscle, or improve athletic performance, I'll create a plan tailored to your unique needs.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>NASM Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Nutrition Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Injury Prevention</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-yellow-500 mr-2"></i>
+                            <span>Posture Correction</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center">
+                        LEARN MORE <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">WHY CHOOSE <span class="text-yellow-500">ELITEFIT</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our comprehensive approach to fitness sets us apart from the competition</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon bg-yellow-500 text-white mx-auto">
+                        <i class="fas fa-dumbbell text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Workouts</h3>
+                    <p class="text-gray-600">Tailored exercise programs designed specifically for your body type, goals, and fitness level.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon bg-yellow-500 text-white mx-auto">
+                        <i class="fas fa-utensils text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Nutrition Plans</h3>
+                    <p class="text-gray-600">Personalized meal plans that complement your training regimen for optimal results.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon bg-yellow-500 text-white mx-auto">
+                        <i class="fas fa-heartbeat text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Accountability</h3>
+                    <p class="text-gray-600">Regular check-ins and progress tracking to keep you motivated and on track.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">OUR <span class="text-yellow-500">PROGRAMS</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer specialized training programs for all fitness levels and age groups</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Weight Loss Program" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Weight Loss Program</h3>
+                        <p class="text-gray-600 mb-4">Scientifically designed workouts and nutrition plans to help you shed fat and keep it off.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500 font-bold">$99/month</span>
+                            <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1532029831906-b7d7e5c2293c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Muscle Building" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Muscle Building</h3>
+                        <p class="text-gray-600 mb-4">Progressive overload training to help you pack on lean muscle mass effectively.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500 font-bold">$129/month</span>
+                            <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Senior Fitness" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Senior Fitness</h3>
+                        <p class="text-gray-600 mb-4">Gentle yet effective workouts to improve mobility, balance, and overall health.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500 font-bold">$89/month</span>
+                            <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#programs" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center">
+                    VIEW ALL PROGRAMS <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Group Targeting Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">PROGRAMS FOR <span class="text-yellow-500">EVERY AGE</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Customized training approaches for different life stages</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-bold mb-3">Teens (13-19)</h3>
+                    <p class="text-gray-600 mb-4">Building healthy habits early with proper form and technique.</p>
+                    <ul class="text-left text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Sports performance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Bodyweight mastery</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Confidence building</li>
+                    </ul>
+                    <a href="#booking" class="text-yellow-500 hover:text-yellow-600 font-semibold">Learn More</a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center transform md:scale-105 relative z-10">
+                    <div class="absolute top-0 left-0 right-0 h-2 bg-yellow-500 rounded-t-lg"></div>
+                    <h3 class="text-xl font-bold mb-3">Adults (20-50)</h3>
+                    <p class="text-gray-600 mb-4">Balanced programs for busy professionals and parents.</p>
+                    <ul class="text-left text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Time-efficient workouts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Stress reduction</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Functional fitness</li>
+                    </ul>
+                    <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-full transition duration-300 inline-block">Most Popular</a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-bold mb-3">Seniors (50+)</h3>
+                    <p class="text-gray-600 mb-4">Gentle yet effective programs for longevity and vitality.</p>
+                    <ul class="text-left text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Mobility improvement</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Fall prevention</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Joint health</li>
+                    </ul>
+                    <a href="#booking" class="text-yellow-500 hover:text-yellow-600 font-semibold">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">CLASS <span class="text-yellow-500">SCHEDULE</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join our group classes or book private sessions</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full bg-gray-100 rounded-lg overflow-hidden">
+                    <thead class="bg-black text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left">Time</th>
+                            <th class="py-4 px-6 text-left">Monday</th>
+                            <th class="py-4 px-6 text-left">Tuesday</th>
+                            <th class="py-4 px-6 text-left">Wednesday</th>
+                            <th class="py-4 px-6 text-left">Thursday</th>
+                            <th class="py-4 px-6 text-left">Friday</th>
+                            <th class="py-4 px-6 text-left">Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-4 px-6 font-semibold">6:00 AM</td>
+                            <td class="py-4 px-6">HIIT</td>
+                            <td class="py-4 px-6">Yoga</td>
+                            <td class="py-4 px-6">Bootcamp</td>
+                            <td class="py-4 px-6">Spin</td>
+                            <td class="py-4 px-6">Strength</td>
+                            <td class="py-4 px-6">-</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-4 px-6 font-semibold">9:00 AM</td>
+                            <td class="py-4 px-6">Senior Fit</td>
+                            <td class="py-4 px-6">Pilates</td>
+                            <td class="py-4 px-6">Senior Fit</td>
+                            <td class="py-4 px-6">Yoga</td>
+                            <td class="py-4 px-6">Pilates</td>
+                            <td class="py-4 px-6">Family Fit</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-4 px-6 font-semibold">12:00 PM</td>
+                            <td class="py-4 px-6">Lunch Express</td>
+                            <td class="py-4 px-6">Lunch Express</td>
+                            <td class="py-4 px-6">Lunch Express</td>
+                            <td class="py-4 px-6">Lunch Express</td>
+                            <td class="py-4 px-6">Lunch Express</td>
+                            <td class="py-4 px-6">-</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                            <td class="py-4 px-6 font-semibold">5:00 PM</td>
+                            <td class="py-4 px-6">Strength</td>
+                            <td class="py-4 px-6">HIIT</td>
+                            <td class="py-4 px-6">Strength</td>
+                            <td class="py-4 px-6">Bootcamp</td>
+                            <td class="py-4 px-6">Yoga</td>
+                            <td class="py-4 px-6">-</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-6 font-semibold">7:00 PM</td>
+                            <td class="py-4 px-6">Yoga</td>
+                            <td class="py-4 px-6">Spin</td>
+                            <td class="py-4 px-6">Yoga</td>
+                            <td class="py-4 px-6">HIIT</td>
+                            <td class="py-4 px-6">Open Gym</td>
+                            <td class="py-4 px-6">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-info-circle text-yellow-500 text-2xl"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-bold text-gray-800">Private Sessions Available</h3>
+                        <p class="text-gray-600">All time slots marked with "-" are available for private 1-on-1 training sessions. Book now to secure your preferred time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">GET STARTED IN <span class="text-yellow-500">3 STEPS</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our simple process ensures you get the perfect program for your needs</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/3 px-4">
+                    <div class="bg-yellow-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-3">Free Consultation</h3>
+                    <p class="text-gray-600">We'll discuss your goals, health history, and preferences to create the perfect plan.</p>
+                </div>
+                
+                <div class="hidden md:block">
+                    <i class="fas fa-arrow-right text-gray-400 text-2xl"></i>
+                </div>
+                
+                <div class="flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/3 px-4">
+                    <div class="bg-yellow-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-3">Assessment</h3>
+                    <p class="text-gray-600">We'll evaluate your current fitness level, mobility, and any limitations.</p>
+                </div>
+                
+                <div class="hidden md:block">
+                    <i class="fas fa-arrow-right text-gray-400 text-2xl"></i>
+                </div>
+                
+                <div class="flex flex-col items-center text-center md:w-1/3 px-4">
+                    <div class="bg-yellow-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-3">Custom Program</h3>
+                    <p class="text-gray-600">Receive your personalized workout and nutrition plan tailored just for you.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center">
+                    START YOUR JOURNEY TODAY <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">OUR <span class="text-yellow-500">PRICING</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Flexible options to fit your budget and commitment level</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="pricing-card bg-white border border-gray-200 rounded-lg shadow-sm p-8">
+                    <h3 class="text-xl font-bold mb-4 text-center">Basic</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">$89</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> 4 Group Classes</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Basic Workout Plan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Email Support</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-times text-gray-400 mr-2"></i> Nutrition Plan</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-times text-gray-400 mr-2"></i> Progress Tracking</li>
+                    </ul>
+                    <a href="#booking" class="block w-full bg-gray-100 hover:bg-gray-200 text-black font-bold py-3 px-6 rounded-full transition duration-300 text-center">GET STARTED</a>
+                </div>
+                
+                <div class="pricing-card bg-black text-white rounded-lg shadow-lg p-8 transform md:scale-105 relative z-10">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Premium</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">$149</span>
+                        <span class="text-gray-300">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> 8 Group Classes</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Custom Workout Plan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Nutrition Guidance</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Progress Tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Biweekly Check-ins</li>
+                    </ul>
+                    <a href="#booking" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full transition duration-300 text-center">GET STARTED</a>
+                </div>
+                
+                <div class="pricing-card bg-white border border-gray-200 rounded-lg shadow-sm p-8">
+                    <h3 class="text-xl font-bold mb-4 text-center">Elite</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">$299</span>
+                        <span class="text-gray-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> 12 Private Sessions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Fully Customized Plan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Detailed Nutrition Plan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Weekly Progress Tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> 24/7 Trainer Access</li>
+                    </ul>
+                    <a href="#booking" class="block w-full bg-gray-100 hover:bg-gray-200 text-black font-bold py-3 px-6 rounded-full transition duration-300 text-center">GET STARTED</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-on Services Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">ADD-ON <span class="text-yellow-500">SERVICES</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Enhance your training with these specialized services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-utensils text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Meal Planning</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Customized meal plans based on your dietary preferences, allergies, and goals.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-yellow-500 font-bold">From $49/month</span>
+                        <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Add Service</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-running text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Running Coaching</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Improve your running form, endurance, and speed with personalized coaching.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-yellow-500 font-bold">From $79/month</span>
+                        <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Add Service</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-spa text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Recovery Therapy</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Massage and recovery techniques to reduce soreness and improve performance.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-yellow-500 font-bold">From $75/session</span>
+                        <a href="#booking" class="text-black hover:text-yellow-500 font-semibold">Add Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">SUCCESS <span class="text-yellow-500">STORIES</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Hear from our satisfied clients who transformed their lives</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-yellow-500 text-sm">Lost 28 lbs</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"After trying countless diets and gyms, EliteFit finally helped me achieve my weight loss goals. The personalized approach made all the difference!"</p>
+                    <div class="flex mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Mark T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Mark T.</h4>
+                            <p class="text-yellow-500 text-sm">Gained 15 lbs muscle</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"As a former skinny guy, I never thought I could build muscle. Michael's expertise in strength training helped me transform my physique in just 6 months."</p>
+                    <div class="flex mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-gray-900 p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Linda P." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Linda P.</h4>
+                            <p class="text-yellow-500 text-sm">Senior Fitness</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"At 68, I was struggling with mobility issues. The senior fitness program gave me back my independence and reduced my joint pain significantly."</p>
+                    <div class="flex mt-4 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">FREQUENTLY <span class="text-yellow-500">ASKED QUESTIONS</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Answers to common questions about our training programs</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="text-lg font-semibold text-left">How soon will I see results?</span>
+                        <i class="fas fa-plus text-yellow-500"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 pt-2 text-gray-600">
+                            Most clients begin to notice improvements in energy levels and sleep quality within the first 2-3 weeks. Visible physical changes typically appear after 4-6 weeks of consistent training and proper nutrition. The exact timeline depends on your starting point, goals, and adherence to the program.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="text-lg font-semibold text-left">Do I need to be in shape to start?</span>
+                        <i class="fas fa-plus text-yellow-500"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 pt-2 text-gray-600">
+                            Absolutely not! Our programs are designed for all fitness levels, from complete beginners to advanced athletes. We'll start at your current level and progressively challenge you as you get stronger and more confident. The most important thing is taking that first step.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="text-lg font-semibold text-left">What should I bring to my first session?</span>
+                        <i class="fas fa-plus text-yellow-500"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 pt-2 text-gray-600">
+                            For your first session, please bring comfortable workout clothes, athletic shoes, a water bottle, and a towel. We provide all necessary equipment. If you have any relevant medical information or doctor's notes, please bring those as well to help us tailor your program safely.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="text-lg font-semibold text-left">Can I cancel or reschedule sessions?</span>
+                        <i class="fas fa-plus text-yellow-500"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 pt-2 text-gray-600">
+                            Yes, we have a flexible 24-hour cancellation policy. You can reschedule or cancel sessions through our online portal or mobile app with at least 24 hours notice. Sessions cancelled with less than 24 hours notice may be subject to a fee, except in cases of emergency.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="accordion-btn w-full flex justify-between items-center p-6 bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="text-lg font-semibold text-left">Do you offer online training?</span>
+                        <i class="fas fa-plus text-yellow-500"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 pt-2 text-gray-600">
+                            Yes! We offer comprehensive online training programs with video demonstrations, live Zoom sessions, and personalized coaching. Our online clients receive the same level of attention and customized programming as our in-person clients, with the convenience of working out from home or while traveling.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-yellow-500 p-10 text-white">
+                        <h2 class="text-3xl font-bold mb-6">READY TO <span class="text-black">TRANSFORM</span> YOUR LIFE?</h2>
+                        <p class="mb-6">Book your free consultation today and take the first step toward achieving your fitness goals.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3"></i>
+                                <span>No obligation, 30-minute session</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3"></i>
+                                <span>Personalized fitness assessment</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle mt-1 mr-3"></i>
+                                <span>Customized program outline</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold mb-6">SCHEDULE YOUR FREE CONSULTATION</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="phone">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="goal">Primary Goal</label>
+                                <select id="goal" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                    <option value="">Select your goal</option>
+                                    <option value="weight-loss">Weight Loss</option>
+                                    <option value="muscle-gain">Muscle Gain</option>
+                                    <option value="toning">Toning</option>
+                                    <option value="senior-fitness">Senior Fitness</option>
+                                    <option value="sports-performance">Sports Performance</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                BOOK FREE CONSULTATION
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">OUR <span class="text-yellow-500">LOCATION</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Visit our state-of-the-art training facility in Los Angeles</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="bg-gray-100 h-full rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.455581154993!2d-118.340518924136!3d34.0838650731446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8d3b1e4a0a5%3A0x7e8a9d2949e35f9f!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1689876543210" width="100%" height="100%" style="min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-8 rounded-lg h-full">
+                        <h3 class="text-2xl font-bold mb-6">ELITEFIT TRAINING STUDIO</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Address</h4>
+                                    <p class="text-gray-600">123 Fitness Avenue<br>Los Angeles, CA 90025</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-yellow-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 5:30 AM - 8:00 PM<br>Saturday: 7:00 AM - 3:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Contact</h4>
+                                    <p class="text-gray-600">Phone: (310) 555-1234<br>Email: info@elitefit.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-parking text-yellow-500 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Parking</h4>
+                                    <p class="text-gray-600">Free parking available in our private lot. Additional street parking is available on surrounding blocks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">START YOUR FITNESS JOURNEY <span class="text-yellow-500">TODAY</span></h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Don't wait to become the best version of yourself. Our team is ready to help you achieve your goals.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#booking" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">BOOK FREE CONSULTATION</a>
+                <a href="tel:+13105551234" class="bg-transparent hover:bg-white hover:text-black border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">CALL NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-500">Elite<span class="text-white">Fit</span></h3>
+                    <p class="text-gray-400 mb-4">Premium personal training services in Los Angeles, California.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-500 transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-500 transition">About</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-yellow-500 transition">Programs</a></li>
+                        <li><a href="#schedule" class="text-gray-400 hover:text-yellow-500 transition">Schedule</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-yellow-500 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-yellow-500"></i>
+                            <span>123 Fitness Avenue<br>Los Angeles, CA 90025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-yellow-500"></i>
+                            <span>(310) 555-1234</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-yellow-500"></i>
+                            <span>info@elitefit.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get fitness tips and special offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-black">
+                        <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 EliteFit Personal Training. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Accordion Functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+        
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle accordion content
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+        
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Form Submission (example)
+        const bookingForm = document.querySelector('#booking form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your booking request! We will contact you shortly to confirm your consultation.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
