@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Lakes Home Insurance | Michigan's Trusted Protection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF7D33', // Orange
+                        secondary: '#8B4513', // Brown
+                        dark: '#1E1E1E',
+                        light: '#F8F8F8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .testimonial-card {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stats-item {
+            position: relative;
+        }
+        
+        .stats-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 50%;
+            background-color: rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .stats-item:after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-3">GL</div>
+                <h1 class="text-xl font-bold text-secondary">Great Lakes <span class="text-primary">Insurance</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-medium hover:text-primary transition">Home</a>
+                <a href="#about" class="font-medium hover:text-primary transition">About</a>
+                <a href="#coverage" class="font-medium hover:text-primary transition">Coverage</a>
+                <a href="#why-us" class="font-medium hover:text-primary transition">Why Us</a>
+                <a href="#testimonials" class="font-medium hover:text-primary transition">Testimonials</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#quote" class="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-medium transition">Get Quote</a>
+            </div>
+            
+            <button class="md:hidden text-2xl text-secondary" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="font-medium hover:text-primary transition">Home</a>
+                <a href="#about" class="font-medium hover:text-primary transition">About</a>
+                <a href="#coverage" class="font-medium hover:text-primary transition">Coverage</a>
+                <a href="#why-us" class="font-medium hover:text-primary transition">Why Us</a>
+                <a href="#testimonials" class="font-medium hover:text-primary transition">Testimonials</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contact</a>
+                <a href="#quote" class="bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-medium transition text-center">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-secondary to-primary text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Protect Your Michigan Home with Confidence</h1>
+                <p class="text-xl mb-8">We've been safeguarding Michigan homes for over 25 years with personalized insurance solutions tailored to our Great Lakes lifestyle.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#quote" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full font-bold text-center transition">Get Your Free Quote</a>
+                    <a href="#contact" class="border-2 border-white hover:bg-white hover:text-primary px-8 py-3 rounded-full font-bold text-center transition">Contact Agent</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Michigan home" class="rounded-lg shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold mb-2">25+</h3>
+                    <p class="text-gray-200">Years in Business</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold mb-2">15K+</h3>
+                    <p class="text-gray-200">Homes Protected</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold mb-2">98%</h3>
+                    <p class="text-gray-200">Customer Satisfaction</p>
+                </div>
+                <div class="stats-item">
+                    <h3 class="text-4xl font-bold mb-2">24/7</h3>
+                    <p class="text-gray-200">Claims Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Michigan's Trusted Home Insurance Experts</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">We understand the unique challenges Michigan homeowners face, from lakefront properties to harsh winters. Our local expertise ensures you get the right coverage at the best price.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Michigan home" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 text-secondary">Why Choose Great Lakes Insurance?</h3>
+                    <p class="mb-6">Founded in Detroit in 1998, we've grown to serve homeowners across the entire state of Michigan. Our team of local agents understands the specific risks our region faces, from lake erosion to heavy snowfall.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Local Expertise</h4>
+                                <p class="text-gray-600">We know Michigan homes inside and out, ensuring you get coverage that actually protects you.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Personalized Service</h4>
+                                <p class="text-gray-600">You'll work directly with your agent, not a call center.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Competitive Rates</h4>
+                                <p class="text-gray-600">We shop multiple carriers to find you the best combination of price and protection.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block mt-8 bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-medium transition">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section id="coverage" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Coverage Options</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">We offer customizable policies to protect what matters most to Michigan homeowners.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Dwelling Protection</h3>
+                    <p class="text-gray-600 mb-6">Covers your home's structure against fire, wind, hail, and other covered perils specific to Michigan.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-umbrella text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Liability Coverage</h3>
+                    <p class="text-gray-600 mb-6">Protects you if someone is injured on your property or you accidentally damage someone else's property.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-box-open text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Personal Property</h3>
+                    <p class="text-gray-600 mb-6">Covers your belongings against theft, damage, or destruction, with special options for high-value items.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-water text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Water Backup</h3>
+                    <p class="text-gray-600 mb-6">Essential for Michigan basements, covering damage from sump pump failures or sewer backups.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-snowflake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Winter Protection</h3>
+                    <p class="text-gray-600 mb-6">Special coverage for ice dams, frozen pipes, and other cold-weather risks common in Michigan.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 text-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-anchor text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Lakefront Coverage</h3>
+                    <p class="text-gray-600 mb-6">Specialized protection for docks, boathouses, and erosion risks unique to waterfront properties.</p>
+                    <a href="#" class="text-primary font-medium flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Michigan Homeowners Choose Us</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">We go beyond standard policies to provide real protection for Michigan homes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <div class="bg-secondary text-white p-8 rounded-lg mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Michigan-Specific Endorsements</h3>
+                        <p>Our policies include special provisions for Michigan-specific risks like ice dams, lake erosion, and heavy snow load protection that many national carriers overlook.</p>
+                    </div>
+                    
+                    <div class="flex items-start mb-8">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Superior Claims Service</h4>
+                            <p class="text-gray-600">When disaster strikes, you'll work directly with our Michigan-based claims team who understand local contractors and repair costs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-2">Multi-Policy Discounts</h4>
+                            <p class="text-gray-600">Bundle your home and auto insurance for significant savings while simplifying your coverage.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="border-2 border-primary rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Michigan Home Insurance Facts</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="text-primary mr-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Michigan ranks #5 in the nation for homeowners insurance claims due to weather events</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Water damage is the most common home insurance claim in Michigan</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Many standard policies don't cover basement flooding without special endorsements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="text-primary mr-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <span>Michigan law doesn't require earthquake coverage, but our seismic activity makes it worth considering</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-primary bg-opacity-10 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2 text-secondary">Local Knowledge Matters</h4>
+                        <p class="mb-4">We know which Michigan neighborhoods are prone to what risks, allowing us to tailor your coverage more precisely than national insurers.</p>
+                        <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white px-6 py-2 rounded-full font-medium transition">Ask About Your Area</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Process Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple 3-Step Quote Process</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Getting your personalized Michigan home insurance quote is quick and easy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-20 h-20 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-4">Tell Us About Your Home</h3>
+                    <p class="text-gray-600">Provide basic details about your Michigan home and coverage needs.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-20 h-20 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-4">Get Multiple Options</h3>
+                    <p class="text-gray-600">We'll shop our network of top Michigan carriers to find you the best options.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-20 h-20 bg-primary text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-4">Choose Your Coverage</h3>
+                    <p class="text-gray-600">Review your options with your local agent and select the perfect policy.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#quote" class="inline-block bg-primary hover:bg-secondary text-white px-8 py-3 rounded-full font-bold transition">Start Your Quote Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Michigan Home Insurance FAQs</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Answers to common questions about home insurance in Michigan.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="accordion mb-4 border-b border-gray-200 pb-4">
+                    <button class="accordion-button w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>What's typically not covered by standard Michigan home insurance?</span>
+                        <span class="accordion-icon text-primary transform transition">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        <p>Standard policies often exclude flood damage (including Great Lakes shoreline flooding), earthquakes, sewer backups, and intentional damage. Many also have limits on high-value items like jewelry. We offer endorsements to cover many of these gaps.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion mb-4 border-b border-gray-200 pb-4">
+                    <button class="accordion-button w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>How are Michigan home insurance rates determined?</span>
+                        <span class="accordion-icon text-primary transform transition">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        <p>Insurers consider your home's location (including proximity to lakes and flood zones), age, construction type, claims history, coverage amounts, and deductibles. Michigan's weather risks make location particularly important here.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion mb-4 border-b border-gray-200 pb-4">
+                    <button class="accordion-button w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>Does Michigan require home insurance?</span>
+                        <span class="accordion-icon text-primary transform transition">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        <p>Unlike auto insurance, Michigan doesn't legally require homeowners insurance. However, if you have a mortgage, your lender will require it. Even without a mortgage, going without coverage is extremely risky given Michigan's weather.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion mb-4 border-b border-gray-200 pb-4">
+                    <button class="accordion-button w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>How can I lower my Michigan home insurance premiums?</span>
+                        <span class="accordion-icon text-primary transform transition">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        <p>Consider bundling policies, increasing deductibles, installing protective devices (like storm shutters), maintaining good credit, and asking about discounts for claims-free history, new roofs, or retired homeowners. We'll help identify all available savings.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion">
+                    <button class="accordion-button w-full flex justify-between items-center text-left font-bold text-lg">
+                        <span>What should I do if my Michigan home is damaged?</span>
+                        <span class="accordion-icon text-primary transform transition">
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                    </button>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        <p>1. Ensure safety first<br>
+                        2. Prevent further damage if possible (like covering broken windows)<br>
+                        3. Document damage with photos/video<br>
+                        4. Contact us immediately to start your claim<br>
+                        5. Keep receipts for any temporary repairs<br>
+                        Our Michigan-based claims team will guide you through every step.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Michigan Homeowners Say</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Don't just take our word for it - hear from our satisfied customers across Michigan.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"When a winter storm caused an ice dam that flooded our living room, Great Lakes Insurance had an adjuster out within 24 hours. They handled everything seamlessly and even recommended local contractors who did amazing work."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-gray-500 text-sm">Traverse City</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"As first-time homebuyers in Detroit, we were overwhelmed by insurance options. Our agent patiently explained everything and found us a policy that gave great coverage at a price we could afford. Their local knowledge was invaluable."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-gray-500 text-sm">Detroit</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"After years with a national insurer who didn't understand lakefront risks, switching to Great Lakes was a game-changer. They properly insured our dock and boat lift, and their Michigan-specific policy language gives us peace of mind."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Lisa R.</h4>
+                            <p class="text-gray-500 text-sm">Holland</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section id="quote" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Michigan Home Insurance Quote</h2>
+                    <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+                    <p class="text-lg">Complete this quick form and a local agent will contact you with personalized options.</p>
+                </div>
+                
+                <form class="bg-white rounded-lg shadow-xl p-8 text-dark">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="phone" class="block font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="zip" class="block font-medium mb-2">ZIP Code</label>
+                            <input type="text" id="zip" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="home-type" class="block font-medium mb-2">Home Type</label>
+                        <select id="home-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="">Select...</option>
+                            <option value="single">Single Family</option>
+                            <option value="condo">Condo</option>
+                            <option value="townhome">Townhome</option>
+                            <option value="duplex">Duplex</option>
+                            <option value="mobile">Mobile Home</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block font-medium mb-2">Current Insurance Status</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div>
+                                <input type="radio" id="current-none" name="insurance-status" class="hidden peer">
+                                <label for="current-none" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white">None</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="current-renter" name="insurance-status" class="hidden peer">
+                                <label for="current-renter" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white">Renter</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="current-other" name="insurance-status" class="hidden peer">
+                                <label for="current-other" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white">Other Insurer</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="current-renewal" name="insurance-status" class="hidden peer">
+                                <label for="current-renewal" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white">Renewal</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-secondary hover:bg-gray-800 text-white px-8 py-3 rounded-full font-bold transition">Get My Free Quote</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Michigan Home Insurance Insights</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">Helpful articles for Michigan homeowners.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Winter home" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-medium mb-2">Winter Preparedness</div>
+                        <h3 class="text-xl font-bold mb-3">Protecting Your Michigan Home from Ice Dams</h3>
+                        <p class="text-gray-600 mb-4">Learn how to prevent and address this common Michigan winter hazard that can cause significant damage.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Lakefront home" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-medium mb-2">Lakefront Living</div>
+                        <h3 class="text-xl font-bold mb-3">Special Insurance Considerations for Michigan Waterfront Homes</h3>
+                        <p class="text-gray-600 mb-4">What every owner of a lakefront or riverfront property in Michigan needs to know about proper coverage.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Renovation" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-medium mb-2">Home Improvement</div>
+                        <h3 class="text-xl font-bold mb-3">How Renovations Affect Your Michigan Home Insurance</h3>
+                        <p class="text-gray-600 mb-4">Before you remodel, understand how upgrades can impact your coverage needs and premiums.</p>
+                        <a href="#" class="text-secondary font-medium flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-primary hover:bg-primary hover:text-white text-primary px-8 py-3 rounded-full font-bold transition">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Your Local Michigan Agent</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg max-w-3xl mx-auto">We have agents serving all regions of Michigan, ready to help with your home insurance needs.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-secondary">Office Locations</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary mr-2"></i> Detroit
+                            </h4>
+                            <p class="text-gray-600 mb-1">123 Insurance Ave</p>
+                            <p class="text-gray-600 mb-1">Detroit, MI 48226</p>
+                            <p class="text-gray-600 mb-3">(313) 555-1234</p>
+                            <a href="#" class="text-primary font-medium">Get Directions</a>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary mr-2"></i> Grand Rapids
+                            </h4>
+                            <p class="text-gray-600 mb-1">456 Protection St</p>
+                            <p class="text-gray-600 mb-1">Grand Rapids, MI 49503</p>
+                            <p class="text-gray-600 mb-3">(616) 555-5678</p>
+                            <a href="#" class="text-primary font-medium">Get Directions</a>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary mr-2"></i> Traverse City
+                            </h4>
+                            <p class="text-gray-600 mb-1">789 Coverage Blvd</p>
+                            <p class="text-gray-600 mb-1">Traverse City, MI 49684</p>
+                            <p class="text-gray-600 mb-3">(231) 555-9012</p>
+                            <a href="#" class="text-primary font-medium">Get Directions</a>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-lg mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt text-primary mr-2"></i> Ann Arbor
+                            </h4>
+                            <p class="text-gray-600 mb-1">101 Safety Lane</p>
+                            <p class="text-gray-600 mb-1">Ann Arbor, MI 48104</p>
+                            <p class="text-gray-600 mb-3">(734) 555-3456</p>
+                            <a href="#" class="text-primary font-medium">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-6 text-secondary">Send Us a Message</h3>
+                    <form>
+                        <div class="mb-6">
+                            <label for="contact-name" class="block font-medium mb-2">Name</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-email" class="block font-medium mb-2">Email</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-phone" class="block font-medium mb-2">Phone</label>
+                            <input type="tel" id="contact-phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-location" class="block font-medium mb-2">Nearest Office</label>
+                            <select id="contact-location" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Select...</option>
+                                <option value="detroit">Detroit</option>
+                                <option value="grand-rapids">Grand Rapids</option>
+                                <option value="traverse-city">Traverse City</option>
+                                <option value="ann-arbor">Ann Arbor</option>
+                                <option value="other">Other Michigan Location</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-message" class="block font-medium mb-2">Message</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white px-6 py-3 rounded-full font-bold transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg mr-3">GL</div>
+                        <h3 class="text-xl font-bold">Great Lakes <span class="text-primary">Insurance</span></h3>
+                    </div>
+                    <p class="mb-4">Protecting Michigan homes since 1998 with local expertise and personalized service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="#coverage" class="hover:text-primary transition">Coverage Options</a></li>
+                        <li><a href="#why-us" class="hover:text-primary transition">Why Choose Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-primary transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Coverage</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition">Homeowners Insurance</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Condo Insurance</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Renters Insurance</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Landlord Insurance</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Flood Insurance</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Umbrella Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mr-3 mt-1"></i>
+                            <span>123 Insurance Ave, Detroit, MI 48226</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-3"></i>
+                            <span>(800) 555-6789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span>info@greatlakesins.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-primary mr-3"></i>
+                            <span>Mon-Fri: 8:30AM - 6PM<br>Sat: 9AM - 2PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-700">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="mb-4 md:mb-0">© 2023 Great Lakes Insurance. All rights reserved.</p>
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
+                        <a href="#" class="hover:text-primary transition">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary transition">Terms of Service</a>
+                        <a href="#" class="hover:text-primary transition">Licensing</a>
+                        <a href="#" class="hover:text-primary transition">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Accordion functionality
+        const accordions = document.querySelectorAll('.accordion');
+        
+        accordions.forEach(accordion => {
+            const button = accordion.querySelector('.accordion-button');
+            
+            button.addEventListener('click', () => {
+                accordion.classList.toggle('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
