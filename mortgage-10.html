@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michigan Home Insurance | Protect Your Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-orange: #e67e22;
+            --dark-orange: #d35400;
+            --light-orange: #f39c12;
+            --primary-brown: #8b4513;
+            --light-brown: #a0522d;
+            --extra-light-brown: #d2b48c;
+            --text-dark: #333;
+            --text-light: #f5f5f5;
+            --background-light: #f9f9f9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+        
+        .navbar {
+            background-color: var(--primary-brown);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-light) !important;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--light-orange) !important;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/michiganhome/1600/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-orange);
+            border-color: var(--primary-orange);
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-orange);
+            border-color: var(--dark-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-orange);
+        }
+        
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-brown);
+        }
+        
+        .testimonial-section {
+            background-color: var(--extra-light-brown);
+            padding: 80px 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .client-position {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--extra-light-brown);
+            color: var(--primary-brown);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(230, 126, 34, 0.25);
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background-color: var(--background-light);
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .step h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-brown);
+        }
+        
+        .coverage-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .coverage-card {
+            background-color: var(--extra-light-brown);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .coverage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coverage-icon {
+            font-size: 2rem;
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+        }
+        
+        .calculator-section {
+            padding: 80px 0;
+            background-color: var(--background-light);
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 0.25rem rgba(230, 126, 34, 0.25);
+        }
+        
+        .range-slider {
+            width: 100%;
+        }
+        
+        .community-section {
+            padding: 80px 0;
+            background-color: var(--background-light);
+        }
+        
+        .community-card {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .community-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .community-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .community-card:hover .community-image img {
+            transform: scale(1.1);
+        }
+        
+        .community-content {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .community-content h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-brown);
+        }
+        
+        .community-content p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+        
+        .community-date {
+            color: var(--primary-orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--extra-light-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary-brown);
+        }
+        
+        .contact-text p {
+            margin-bottom: 0;
+            color: #777;
+        }
+        
+        .contact-form {
+            background-color: var(--extra-light-brown);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .contact-form .form-control {
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: var(--primary-brown);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--light-orange);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-orange);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-image img {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-card, .testimonial-card, .coverage-card {
+                margin-bottom: 30px;
+            }
+            
+            .contact-info {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Michigan Home Insurance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Protect Your Michigan Home</h1>
+            <p>Expert home insurance solutions tailored for Michigan homeowners, providing peace of mind and comprehensive coverage for your most valuable asset.</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p>With over 20 years of experience serving Michigan homeowners, we understand the unique insurance needs of our local community. Our team of licensed insurance professionals is dedicated to providing personalized coverage solutions that protect your home and your family.</p>
+                    <p>Whether you're a first-time homebuyer, a seasoned homeowner, or looking to renew your existing policy, we're here to guide you through the process with transparency and expertise.</p>
+                    <p>Based in Michigan, we know the risks homeowners face from severe weather, seasonal changes, and local threats. Our policies are designed to address these specific concerns while offering competitive rates and exceptional customer service.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/michiganinsurance/600/400.jpg" alt="About Michigan Home Insurance" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section py-5" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Home Insurance</h3>
+                        <p>Comprehensive coverage for your home, including dwelling, personal property, liability, and additional living expenses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                        <h3>Renter's Insurance</h3>
+                        <p>Protection for your personal belongings and liability coverage for those who rent their homes in Michigan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Condo Insurance</h3>
+                        <p>Specialized coverage for condo owners, including personal property, liability, and improvements.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Home Warranty</h3>
+ <p>Protection for major home systems and appliances, helping you avoid unexpected repair costs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Liability Protection</h3>
+                        <p>Additional coverage to protect you from lawsuits and medical expenses related to injuries on your property.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Disaster Coverage</h3>
+                        <p>Specialized protection for Michigan-specific risks including severe weather, flooding, and winter damage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <div class="testimonial-image">
+                                <img src="https://picsum.photos/seed/client1/80/80.jpg" alt="Client" class="img-fluid">
+                            </div>
+                            <div class="client-details">
+                                <h5 class="client-name">Sarah Johnson</h5>
+                                <p class="client-position">Homeowner, Lansing</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"After a pipe burst during a Michigan winter, I was so relieved to have the right insurance coverage. The team was responsive, helpful, and made the claims process straightforward. Highly recommend!"</p>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <div class="testimonial-image">
+                                <img src="https://picsum.photos/seed/client2/80/80.jpg" alt="Client" class="img-fluid">
+                            </div>
+                            <div class="client-details">
+                                <h5 class="client-name">Michael Thompson</h5>
+                                <p class="client-position">Homeowner, Grand Rapids</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"I've been with Michigan Home Insurance for 5 years now, and I couldn't be happier. They found me great coverage at a competitive price, and their customer service is exceptional."</p>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="client-info">
+                            <div class="testimonial-image">
+                                <img src="https://picsum.photos/seed/client3/80/80.jpg" alt="Client" class="img-fluid">
+                            </div>
+                            <div class="client-details">
+                                <h5 class="client-name">Jennifer Williams</h5>
+                                <p class="client-position">Renter, Detroit</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"As a renter, I didn't think I needed insurance until my apartment was damaged. The renter's policy I got through Michigan Home Insurance saved me thousands. They're knowledgeable about all aspects of Michigan housing."</p>
+                        </div>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What factors affect my Michigan home insurance premium?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Your premium is affected by several factors including the location of your home, its age and construction type, the coverage limits you choose, your deductible amount, your claims history, and security features in your home. Michigan-specific risks like wind, hail, and winter weather are also considered.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Does Michigan home insurance cover flood damage?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Standard home insurance policies typically do not cover flood damage in Michigan. You'll need to purchase a separate flood insurance policy, especially if you live in a flood-prone area. We can help you assess your flood risk and find the right coverage for your needs.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How can I lower my home insurance premiums in Michigan?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can lower your premiums by increasing your deductible, installing safety features like security systems or smoke detectors, bundling your home and auto insurance, maintaining a good credit score, and shopping around for the best rates. We can help you find all available discounts.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            What's the difference between actual cash value and replacement cost coverage?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Actual cash value coverage pays for the replacement cost minus depreciation, while replacement cost coverage pays the full cost to replace damaged items without deducting for depreciation. We generally recommend replacement cost coverage as it provides more comprehensive protection.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How long does it take to process a home insurance claim in Michigan?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            The claims process timeline varies depending on the complexity of the claim. For straightforward claims, you can expect an adjuster visit within 24-48 hours, and payment within a week to 10 days. We'll guide you through every step and help expedite the process.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Contact Us</h4>
+                        <p>Get in touch with our team through our website, phone, or email. We're available to answer your initial questions and understand your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Consultation</h4>
+                        <p>We'll schedule a personalized consultation to discuss your property, assess risks, and identify the coverage options that best suit your situation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Quote & Selection</h4>
+                        <p>We'll provide you with multiple quotes from different carriers, explain the differences, and help you select the perfect coverage for your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Policy Activation</h4>
+                        <p>Once you've selected your coverage, we'll handle all the paperwork and ensure your policy is activated on your desired effective date.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h4>Policy Review</h4>
+                        <p>We'll schedule regular reviews to ensure your coverage remains adequate as your needs change and to help you take advantage of new discounts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h4>Claims Support</h4>
+                        <p>If you need to file a claim, we'll be with you every step of the way, helping you navigate the process and ensuring you receive fair compensation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Section -->
+    <section class="coverage-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Cover</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Dwelling Coverage</h3>
+                        <p>Protection for your home's structure against damage from fire, wind, hail, and other covered perils specific to Michigan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Personal Property</h3>
+                        <p>Covers your furniture, electronics, clothing, and other personal belongings against theft or damage, even when away from home.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Liability Protection</h3>
+                        <p>Protects you if someone is injured on your property or if you cause damage to someone else's property, covering legal fees and medical expenses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Other Structures</h3>
+                        <p>Covers structures on your property that are not attached to your home, such as garages, sheds, fences, and guesthouses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Loss of Use</h3>
+                        <p>Provides coverage for additional living expenses if you're unable to live in your home due to a covered loss, including hotel costs and meals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="coverage-card">
+                        <div class="coverage-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h3>Michigan-Specific Risks</h3>
+                        <p>Additional coverage for Michigan-specific risks such as winter weather damage, wind storms, and seasonal flooding concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Insurance Cost Estimator</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="calculator-card">
+                        <form id="insurance-calculator">
+                            <div class="mb-3">
+                                <label for="home-value" class="form-label">Estimated Home Value ($)</label>
+                                <input type="number" class="form-control" id="home-value" placeholder="e.g. 250000" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="property-type" class="form-label">Property Type</label>
+                                <select class="form-select" id="property-type" required>
+                                    <option value="" selected disabled>Select property type</option>
+                                    <option value="single">Single Family Home</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="condo">Condo</option>
+                                    <option value="apartment">Apartment</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="year-built" class="form-label">Year Built</label>
+                                <input type="number" class="form-control" id="year-built" placeholder="e.g. 2000" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="coverage-type" class="form-label">Coverage Type</label>
+                                <select class="form-select" id="coverage-type" required>
+                                    <option value="" selected disabled>Select coverage type</option>
+                                    <option value="basic">Basic Coverage</option>
+                                    <option value="standard">Standard Coverage</option>
+                                    <option value="premium">Premium Coverage</option>
+                                    <option value="ultimate">Ultimate Coverage</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="deductible" class="form-label">Deductible Amount: <span id="deductible-value">$1,000</span></label>
+                                <input type="range" class="form-range range-slider" id="deductible" min="500" max="5000" step="100" value="1000">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Safety Features (check all that apply)</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="security-system">
+                                    <label class="form-check-label" for="security-system">Security System</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="smoke-detectors">
+                                    <label class="form-check-label" for="smoke-detectors">Smoke Detectors</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="fire-extinguishers">
+                                    <label class="form-check-label" for="fire-extinguishers">Fire Extinguishers</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="storm-shutters">
+                                    <label class="form-check-label" for="storm-shutters">Storm Shutters</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Calculate Estimate</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="calculator-card">
+                        <h3 class="mb-4">Your Estimated Premium</h3>
+                        <div class="alert alert-info">
+                            <p class="mb-0">Fill out the form to the left to see your personalized insurance premium estimate.</p>
+                        </div>
+                        <div id="result-container" style="display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Estimated Annual Premium:</h4>
+                                <h3 id="premium-amount" class="text-primary">$0</h3>
+                            </div>
+                           div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5>Monthly Payment:</h5>
+                                <h5 id="monthly-amount" class="text-primary">$0</h5>
+                            </div>
+                            <hr>
+                            <h5 class="mb-3">Coverage Breakdown:</h5>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Dwelling Coverage:</span>
+                                <span id="dwelling-amount">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Personal Property:</span>
+                                <span id="property-amount">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Liability Protection:</span>
+                                <span id="liability-amount">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Other Structures:</span>
+                                <span id="structures-amount">$0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Loss of Use:</span>
+                                <span id="use-amount">$0</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5>Discounts:</h5>
+                                <h5 id="discount-amount" class="text-success">-$0</h5>
+                            </div>
+                            <div class="alert alert-success">
+                                <i class="fas fa-info-circle me-2"></i> This is an estimate only. Actual rates may vary based on underwriting review.
+                            </div>
+                            <a href="#contact" class="btn btn-primary w-100 mt-3">Get a Detailed Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Community Involvement</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="community-card">
+                        <div class="community-image">
+                            <img src="https://picsum.photos/seed/community1/600/400.jpg" alt="Community Event" class="img-fluid">
+                        </div>
+                        <div class="community-content">
+                            <h4>Michigan Home Safety Day</h4>
+                            <p>Our annual event bringing together local homeowners to learn about disaster preparedness and home safety measures.</p>
+                            <p class="community-date">June 15, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="community-card">
+                        <div class="community-image">
+                            <img src="https://picsum.photos/seed/community2/600/400.jpg" alt="Community Event" class="img-fluid">
+                        </div>
+                        <div class="community-content">
+                            <h4>First Responder Support</h4>
+                            <p>We proudly sponsor local first responders, providing emergency services with the resources they need to protect our community.</p>
+                            <p class="community-date">Ongoing Program</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="community-card">
+                        <div class="community-image">
+                            <img src="https://picsum.photos/seed/community3/600/400.jpg" alt="Community Event" class="img-fluid">
+                        </div>
+                        <div class="community-content">
+                            <h4>Homeowner Education Series</h4>
+                            <p>Monthly workshops teaching Michigan homeowners about insurance options, disaster preparedness, and home maintenance.</p>
+                            <p class="community-date">Every First Saturday</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Main Office</h5>
+                                <p>123 Insurance Way, Lansing, MI 48933</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Phone</h5>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email</h5>
+                                <p>info@michiganhomeinsurance.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Office Hours</h5>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="insurance-type" class="form-label">Insurance Type</label>
+                                <select class="form-select" id="insurance-type" required>
+                                    <option value="" selected disabled>Select insurance type</option>
+                                    <option value="home">Home Insurance</option>
+                                    <option value="renter">Renter's Insurance</option>
+                                    <option value="condo">Condo Insurance</option>
+                                    <option value="home-warranty">Home Warranty</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your insurance needs" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-title">Michigan Home Insurance</h4>
+                    <p>Protecting Michigan homeowners since 2003. We provide comprehensive insurance solutions tailored to the unique needs of Michigan residents.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Insurance Types</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home Insurance</a></li>
+                        <li><a href="#">Renter's Insurance</a></li>
+                        <li><a href="#">Condo Insurance</a></li>
+                        <li><a href="#">Home Warranty</a></li>
+                        <li><a href="#">Liability Protection</a></li>
+                        <li><a href="#">Disaster Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <p>Subscribe to our newsletter for insurance tips, updates, and exclusive offers.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Michigan Home Insurance. All Rights Reserved. | Licensed Insurance Agent in Michigan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Deductible range slider
+        const deductibleSlider = document.getElementById('deductible');
+        const deductibleValue = document.getElementById('deductible-value');
+        
+        if (deductibleSlider) {
+            deductibleSlider.addEventListener('input', function() {
+                deductibleValue.textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(this.value);
+            });
+        }
+        
+        // Insurance calculator
+        const insuranceCalculator = document.getElementById('insurance-calculator');
+        const resultContainer = document.getElementById('result-container');
+        
+        if (insuranceCalculator) {
+            insuranceCalculator.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const homeValue = parseFloat(document.getElementById('home-value').value);
+                const propertyType = document.getElementById('property-type').value;
+                const yearBuilt = parseInt(document.getElementById('year-built').value);
+                const coverageType = document.getElementById('coverage-type').value;
+                const deductible = parseFloat(document.getElementById('deductible').value);
+                
+                // Check safety features
+                const securitySystem = document.getElementById('security-system').checked;
+                const smokeDetectors = document.getElementById('smoke-detectors').checked;
+                const fireExtinguishers = document.getElementById('fire-extinguishers').checked;
+                const stormShutters = document.getElementById('storm-shutters').checked;
+                
+                // Calculate premium (simplified algorithm for demo)
+                let baseRate = 0;
+                
+                // Base rate based on home value
+                if (homeValue < 150000) {
+                    baseRate = 0.015;
+                } else if (homeValue < 300000) {
+                    baseRate = 0.012;
+                } else if (homeValue < 500000) {
+                    baseRate = 0.01;
+                } else {
+                    baseRate = 0.008;
+                }
+                
+                // Adjust based on property type
+                switch (propertyType) {
+                    case 'single':
+                        baseRate *= 1;
+                        break;
+                    case 'townhouse':
+                        baseRate *= 0.9;
+                        break;
+                    case 'condo':
+                        baseRate *= 0.85;
+                        break;
+                    case 'apartment':
+                        baseRate *= 0.8;
+                        break;
+                }
+                
+                // Adjust based on year built
+                if (yearBuilt > 2010) {
+                    baseRate *= 0.9; // Newer homes have lower rates
+                } else if (yearBuilt < 1980) {
+                    baseRate *= 1.1; // Older homes have higher rates
+                }
+                
+                // Adjust based on coverage type
+                switch (coverageType) {
+                    case 'basic':
+                        baseRate *= 0.8;
+                        break;
+                    case 'standard':
+                        baseRate *= 1;
+                        break;
+                    case 'premium':
+                        baseRate *= 1.2;
+                        break;
+                    case 'ultimate':
+                        baseRate *= 1.4;
+                        break;
+                }
+                
+                // Adjust based on deductible
+                baseRate *= (1000 / deductible);
+                
+                // Calculate annual premium
+                let annualPremium = homeValue * baseRate;
+                
+                // Apply discounts for safety features
+                let discount = 0;
+                if (securitySystem) discount += annualPremium * 0.05;
+                if (smokeDetectors) discount += annualPremium * 0.03;
+                if (fireExtinguishers) discount += annualPremium * 0.02;
+                if (stormShutters) discount += annualPremium * 0.04;
+                
+                // Apply discounts
+                annualPremium -= discount;
+                
+                // Calculate monthly premium
+                const monthlyPremium = annualPremium / 12;
+                
+                // Update the result display
+                document.getElementById('premium-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium);
+                
+                document.getElementById('monthly-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(monthlyPremium);
+                
+                // Breakdown of coverage (simplified)
+                document.getElementById('dwelling-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium * 0.6);
+                
+                document.getElementById('property-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium * 0.2);
+                
+                document.getElementById('liability-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium * 0.1);
+                
+                document.getElementById('structures-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium * 0.05);
+                
+                document.getElementById('use-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(annualPremium * 0.05);
+                
+                document.getElementById('discount-amount').textContent = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(discount);
+                
+                // Show the result
+                resultContainer.style.display = 'block';
+            });
+        }
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const insuranceType = document.getElementById('insurance-type').value;
+                const message = document.getElementById('message').value;
+                
+                // In a real application, you would send this data to your server
+                // For this demo, we'll just show a success message
+                
+                // Create a toast notification
+                const toast = document.createElement('div');
+                toast.className = 'position-fixed bottom-0 end-0 p-3';
+                toast.style.zIndex = '11';
+                
+                toast.innerHTML = `
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-success text-white">
+                            <strong class="me-auto">Success!</strong>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Thank you, ${name}! Your message has been sent. We'll contact you shortly.
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(toast);
+                
+                // Reset the form
+                contactForm.reset();
+                
+                // Remove the toast after 5 seconds
+                setTimeout(() => {
+                    toast.remove();
+                }, 5000);
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
