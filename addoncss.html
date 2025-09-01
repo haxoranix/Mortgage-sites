@@ -1,0 +1,701 @@
+h1.woocommerce-products-header__title {
+  color: #F1FFFD !important;
+	font-family:inter;
+}
+@media only screen and (max-width: 768px) {
+  h1.woocommerce-products-header__title {
+    font-size: 36px !important;
+    color: #F1FFFD !important;
+  }
+}
+.woocommerce ul.products li.product .price, .woocommerce div.product p.price, .woocommerce div.product span.price, .widget_layered_nav_filters ul li.chosen a, .woocommerce-page ul.products li.product .ast-woo-product-category, .wc-layered-nav-rating a {
+  color: #f7f7f7;
+}
+/* Product Card Container */
+.woocommerce ul.products li.product {
+  background: #1A1A1A;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect */
+.woocommerce ul.products li.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Product Image */
+.woocommerce ul.products li.product img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px 12px 0 0; /* Top rounded only */
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover img {
+  transform: scale(1.03);
+}
+
+/* Product inner content */
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.woocommerce ul.products li.product .price,
+.woocommerce ul.products li.product .ast-woo-product-category,
+.woocommerce ul.products li.product a.button {
+  padding: 0 15px;
+}
+
+/* Product Title */
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+  font-size: 16px;
+  color: #F7F7F7;
+  margin: 12px 0 8px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Product Price */
+.woocommerce ul.products li.product .price {
+  color: #00D6B2;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Add to Cart Button */
+.woocommerce ul.products li.product a.button {
+  background-color: #00D6B2;
+  color: #0D0D0D;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin: 10px 15px 15px;
+  text-align: center;
+  display: block;
+}
+
+.woocommerce ul.products li.product a.button:hover {
+  background-color: #00b39e;
+  color: #fff;
+}
+
+/* Product Categories */
+.woocommerce ul.products li.product .ast-woo-product-category {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE: Make cards full-width on small screens */
+@media (max-width: 767px) {
+  ul.products.columns-3 li.product,
+  ul.products.columns-4 li.product,
+  ul.products li.product {
+    width: 100% !important;
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin: 0 0 20px;
+  }
+
+  ul.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+    font-size: 15px;
+  }
+
+  .woocommerce ul.products li.product .price {
+    font-size: 14px;
+  }
+}
+
+/*something more */
+
+/* DESKTOP STYLING ONLY */
+@media (min-width: 1024px) {
+  #secondary.widget-area {
+    position: relative;
+    top: 0;
+    align-self: flex-start;
+    z-index: 10;
+
+    background-color: #111111;
+    padding: 25px 20px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #F7F7F7;
+    max-width: 300px;
+  }
+
+  #secondary .widget-title {
+    color: #00D6B2;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+  }
+
+  #secondary .widget {
+    margin-bottom: 30px;
+  }
+
+  #secondary input[type="number"],
+  #secondary input[type="text"] {
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 6px 10px;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  #secondary input[type="checkbox"],
+  #secondary input[type="radio"] {
+    accent-color: #00D6B2;
+  }
+
+  #secondary .ui-slider-range {
+    background-color: #00D6B2 !important;
+  }
+
+  #secondary a {
+    color: #00D6B2;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  #secondary a:hover {
+    color: #00b39e;
+  }
+}
+@media (max-width: 767px) {
+  .wc-block-product-filters__open-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #00D6B2;
+    color: #0D0D0D;
+    font-weight: 600;
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .wc-block-product-filters__open-overlay span {
+    color: #0D0D0D;
+    font-weight: 600;
+  }
+
+  body {
+    padding-bottom: 80px; /* Prevent bottom content from being hidden */
+  }
+}
+/* Fix tooltip visibility on hover */
+.ast-card-action-tooltip {
+  background-color: #00D6B2 !important;  /* Light background */
+  color: #000000 !important;              /* Dark text for contrast */
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Optional: Hover animation or smooth appearance */
+.ast-on-card-button:hover .ast-card-action-tooltip {
+  transition: all 0.3s ease;
+}
+/* Dokan Dashboard area */
+.dokan-dashboard,
+.dokan-dashboard .dokan-dash-sidebar,
+.dokan-dashboard .dokan-dash-content,
+.dokan-dashboard .dokan-dashboard-wrap {
+    background-color: #f5f5f1 !important;
+    color: #000000;
+}
+
+/* Optional: override text colors */
+
+/* ──────────────────────────────────────────────
+   Order-pay endpoint → full-page dark backdrop
+   ─────────────────────────────────────────── */
+body.woocommerce-order-pay{
+    background:#09090b;                          /* your secondary-bg */
+    color:#fff;
+    line-height:1.5;
+    font-size:15px;
+}
+
+/* ──────────────────────────────────────────────
+   Card wrapper (WooCommerce div)
+   ─────────────────────────────────────────── */
+body.woocommerce-order-pay .woocommerce{
+    max-width:640px;                             /* adjust width as needed */
+    margin:72px auto;                            /* centre the card */
+    background:#131111;                          /* primary-bg */
+    border:1px solid #111;
+    border-radius:18px;
+    padding:48px 40px 56px;
+    box-shadow:0 10px 38px rgba(0,0,0,.55);
+    position:relative;
+}
+
+/* Brand accent bar on top of the card */
+body.woocommerce-order-pay .woocommerce::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:4px;
+    background:#00D6B2;
+    border-radius:18px 18px 0 0;
+}
+
+/* ──────────────────────────────────────────────
+   Order number / date / total list
+   ─────────────────────────────────────────── */
+body.woocommerce-order-pay ul.order_details{
+    list-style:none;
+    margin:0 0 32px;
+    padding:0;
+    display:flex;
+    gap:32px;
+    border-bottom:1px dashed #00D6B2;
+}
+
+body.woocommerce-order-pay ul.order_details li{
+    flex:1;
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:.06em;
+    color:#fff;
+}
+
+body.woocommerce-order-pay ul.order_details li strong{
+    display:block;
+    font-size:16px;
+    margin-top:4px;
+}
+
+/* ──────────────────────────────────────────────
+   Instruction paragraph
+   ─────────────────────────────────────────── */
+body.woocommerce-order-pay p{
+    color:#D1D5DB;
+    margin:0 0 36px;
+}
+
+/* ──────────────────────────────────────────────
+   Buy-now button
+   ─────────────────────────────────────────── */
+body.woocommerce-order-pay a.button{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#00D6B2;
+    color:#131111;
+    font-weight:600;
+    padding:16px 0;
+    border:0;
+    border-radius:10px;
+    transition:background .25s ease, transform .15s ease;
+}
+
+body.woocommerce-order-pay a.button:hover{
+    background:#04b99a;                          /* 5 % darker */
+    transform:translateY(-2px);
+}
+
+body.woocommerce-order-pay a.button:active{
+    transform:translateY(0);
+}
+
+.dial-code {
+	color:#00D6B2;
+}
+
+
+/* DOKAN DASHBOARD CUSTOMIZATION*/
+#dokan-analytics-app .woocommerce-layout__header-wrapper{
+    display:flex !important;
+    justify-content:space-between !important;
+    align-items:baseline !important;
+    padding:14px 24px 0px 20px !important;
+    box-sizing:border-box !important;
+}
+#dokan-analytics-app h3.entry-title{
+    margin:0 !important;
+	color:  #1E293B;
+	font-weight:700;
+	font-family: inter;
+	font-size: 24px;
+}
+#dokan-analytics-app .woocommerce-layout__header{
+    border:none !important;
+}
+/* Dokan section titles (e.g. "Performance") */
+#dokan-analytics-app .woocommerce-section-header__title {
+    color: #1E293B !important;
+}
+
+/* Woo dashboard card titles (e.g. "Net Sales", "Orders") */
+#dokan-analytics-app .components-card__header h3 {
+    color: #1E293B !important;
+}
+
+/* WOO CART NOTICE*/
+.woocommerce-mini-cart__empty-message {
+    color: #ffffff !important;            /* white text for contrast */
+    background-color: #1E293B !important; /* dark gray bg (or your choice) */
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ARTIST NAME ON PRODUCT CARD */
+.music-artist-name {
+    font-size: 14px;
+    color: #9f9fa9 !important;
+	font-weight: 600;
+    margin-top: 0;
+    margin-left: 0;           /* Removes unwanted indentation */
+    padding: 0px 0px 20px 15px;         /* Remove horizontal padding */
+    text-align: left;
+    display: block;
+    line-height: 1.4;
+}
+.music-artist-name:hover {
+    color: #f7f7f7;
+}
+.music-artist-name a {
+	color: #9f9fa9; 
+}
+
+/* PRODUCT TITLE ELIPSE */
+.woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+  font-size: 16px;
+  color: #F7F7F7;
+  margin: 12px 0 0px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+
+.wc-block-product-filter-checkbox-list__text {
+	color:#F1F2F2;
+	font-size:16px;
+	
+}
+.license {
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px dashed #00ff99;
+  padding: 10px;
+  color: #fff;
+}
+.license * {
+  color: inherit !important;
+}
+
+/* Use Inter font globally for filter */
+.wpc-filters-section,
+.wpc-filters-section input,
+.wpc-filters-section select,
+.wpc-filters-section label,
+.wpc-filter-title {
+  font-family: 'Inter', sans-serif !important;
+  color: #00D6B2 !important;
+
+}
+
+/* Font size per element */
+.wpc-filter-title {
+  font-size: 24px !important;
+  font-weight: 500!important;
+  
+}
+
+/* Apply Button */
+a.wpc-filters-submit-button {
+  background-color: #00D6B2 !important;
+  color: #111111 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 8px 30px  !important;
+  border: none !important;
+  border-radius:4px !important;
+  text-align: center !important;
+  display: inline-block !important;
+  width: auto !important;
+  transition: all 0.3s ease-in-out !important;
+}
+/* Reset Button */
+a.wpc-filters-reset-button {
+  background-color: #f2f2f2 !important;
+  color: #111111 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 8px 25px !important;
+  border: 2px solid #00D6B2 !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  display: inline-block !important;
+  width: auto !important;
+  margin-right: 10px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+/* count color*/
+p.woocommerce-result-count {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: #00D6B2 !important;
+  margin-bottom: 1rem !important;
+}/* Wrap to style dropdown chevron */
+.woocommerce-ordering {
+  position: relative;
+}
+
+/* Remove default arrow in most browsers */
+.woocommerce-ordering select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #131111;
+  color: #9f9fa9;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  border: 1px solid #00D6B2;
+  padding: 10px 40px 10px 12px;
+  border-radius: 4px;
+  background-image: none; /* Remove any existing arrows */
+}
+
+/* Custom arrow */
+.woocommerce-ordering::after {
+  content: '▾';
+  color: #00D6B2; /* Brand green */
+  font-size: 14px;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style the "Reset all" filter chip */
+.wpc-filter-chip.wpc-chip-reset-all a {
+  background-color: transparent;
+  color: #ffffff!important;
+  border: 1px solid #ffebeb!important;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 1px 10px 2px!important;
+  border-radius: 6px;
+  text-transform: capitalize;
+  transition: all 0.12s ease;
+}
+
+/* Hover effect */
+.wpc-filter-chip.wpc-chip-reset-all a:hover {
+  background-color: #131111!important;
+  color: #00d6b2!important; /* Optional dark text on hover */
+}
+/* Style for individual active filter chips */
+.wpc-filter-chip a {
+  background-color: #00D6B2; /* Brand green */
+  color: #131111; /* Dark text */
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 24px;
+  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Style for the close (x) icon inside the chip */
+.wpc-filter-chip a .wpc-filter-chip-remove {
+  color: red; /* Keep the cross red */
+}
+/* Make sure the mobile filter toggle is visible */
+.wpc-open-close-filters-button {
+   /* Brand green */
+  color: #ffffff!important; /* Dark text */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px!important;
+  display: inline-block;
+  border: 1px;
+	border-color:#00D6B2 !important;
+  text-align: center;
+  margin: 12px auto;
+}
+
+/* Ensure it's not hidden */
+.wpc-open-button-container {
+  display: flex !important;
+  justify-content: center;
+}
+
+/* Optional: Improve visibility on very dark backgrounds */
+.wpc-open-close-filters-button:hover {
+  background-color: #00c2a2!important;
+  color: #111111!important;
+}
+@media (max-width: 768px) {
+  .wpc-opened .wpc-posts-found p,
+  .wpc-opened .wpc-posts-found .wpc-posts-found-number {
+    color: #f7f7f7 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+/* Store Card Wrapper */
+.dokan-seller-wrap .store-wrapper {
+  background-color: #131111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: none !important;
+  border: 2px solid #333;
+}
+
+/* Always show store name */
+.dokan-seller-wrap .store-content .store-data-container {
+  background:none !important;
+  color: #F1FFFD;
+  font-size: 18px !important;
+  font-weight: 600;
+  padding: 10px 15px 0 15px;
+  text-shadow: 1px 1px 1px #000;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  z-index: 2;
+}
+
+/* Avatar styling */
+.dokan-seller-wrap .store-footer .seller-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid #00D6B2;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+  bottom: 60px;
+  right: 15px;
+  z-index: 2;
+}
+
+/* Store Footer */
+.dokan-seller-wrap .store-footer {
+  background-color: #000 !important;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+/* Follow Button */
+.dokan-seller-wrap .store-footer .dokan-follow-store-button {
+  background-color: #00D6B2;
+  color: #000;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+/* Remove vendor card drop shadow */
+.dokan-seller-wrap li.dokan-single-seller {
+  box-shadow: none !important;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .dokan-seller-wrap .store-content .store-data-container {
+    font-size: 16px;
+  }
+
+  .dokan-seller-wrap .store-footer .dokan-follow-store-button {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+
+  .dokan-seller-wrap .store-footer {
+    padding: 10px;
+  }
+}
+
+/* ============ Card Wrapper Hover ============ */
+.dokan-seller-wrap .store-wrapper {
+  background-color: #131111;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #333;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dokan-seller-wrap .store-wrapper:hover {
+  transform: translateY(-4px);
+  border-color: #00D6B2;
+  box-shadow: 0 4px 12px rgba(0, 214, 178, 0.25);
+}
+
+/* ============ Follow Button Hover ============ */
+.dokan-seller-wrap .store-footer .dokan-follow-store-button:hover {
+  background-color: #00bfa5;
+  color: #000;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ============ Avatar Hover Glow ============ */
+.dokan-seller-wrap .store-footer .seller-avatar:hover {
+  box-shadow: 0 0 12px rgba(0, 214, 178, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+#dokan-store-listing-filter-wrap {
+	display:none;
+}
+#dokan-store-listing-filter-form-wrap {
+display:none !important;}
